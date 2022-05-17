@@ -1,0 +1,5103 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head itemscope itemtype="http://www.kali.org/">
+  
+  <title>Kali Linux</title>
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link href="style.min.css" rel="stylesheet"/>
+  <style>
+  :root {
+    --primary-color:#367BF0;
+    --body-color:#f9f9f9;
+    --text-color:#636363;
+    --text-color-dark:#242738;
+    --white-color:#ffffff;
+    --light-color:#f8f9fa;
+    --font-family:Noto Sans;
+  }
+
+  body.dark-theme {
+    --body-color:black;
+    --text-color:#e1e1e1;
+    --text-color-dark:white;
+    --white-color:#121212;
+    --light-color:#1A1A1A;
+  }
+  </style>
+
+  <!-- Custom Fonts -->
+  
+  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+
+  <script>
+    const $ = document.querySelector.bind(document)
+    const $$ = document.querySelectorAll.bind(document)
+  </script>
+</head>
+
+  <body>
+    <header class="bg-cover">
+      <nav class="container">
+  <a id="logo" href="http://www.kali.org/" style="background-image:url(images/kali-logo.svg)"></a>
+  <ul id="navigation">
+    
+    
+    <li>
+      <a href="http://www.kali.org/get-kali/">Get Kali</a>
+    </li>
+    
+    
+    
+    <li>
+      <a href="http://www.kali.org/blog/">Blog</a>
+    </li>
+    
+    
+    
+    <li class="dropdown-menu">
+      <span>Documentation <i class="ti-angle-down"></i></span>
+      <div>
+        
+        
+        <a href="http://www.kali.org/docs/">Kali Linux Documentation</a>
+        
+        
+        <a href="http://www.kali.org/tools/">Kali Tools Documentation</a>
+        
+        
+        <a href="https://bugs.kali.org/search.php?project_id=1&category_id[]=General%20Bug&category_id[]=Kali%20Package%20Bug&category_id[]=Kali%20Package%20Improvement&status[]=30&status[]=40&status[]=50&sticky=on&sort=id%2Clast_updated&dir=DESC%2CDESC&hide_status=-2&match_type=0">Known Issues</a>
+        
+      </div>
+    </li>
+      
+    
+    
+    <li class="dropdown-menu">
+      <span>Community <i class="ti-angle-down"></i></span>
+      <div>
+        
+        
+        <a href="http://www.kali.org/community/">Community Support</a>
+        
+        
+        <a href="https://forums.kali.org/">Kali Linux Forums</a>
+        
+        
+        <a href="ircs://irc.oftc.net:6697/#Kali-Linux">Real Time Chat</a>
+        
+        
+        <a href="http://www.kali.org/newsletter/">Join Newsletter</a>
+        
+        
+        <a href="https://http.kali.org/README.mirrorlist">Mirror Location</a>
+        
+        
+        <a href="http://www.kali.org/docs/community/contribute/">Get Involved</a>
+        
+      </div>
+    </li>
+      
+    
+    
+    <li class="dropdown-menu">
+      <span>Courses <i class="ti-angle-down"></i></span>
+      <div>
+        
+        
+        <a href="https://portal.offensive-security.com/courses/pen-103">Kali Linux Revealed (KLCP/PEN-103)</a>
+        
+        
+        <a href="https://www.offensive-security.com/pwk-oscp/">PEN-200 (PWK/OSCP)</a>
+        
+        
+        <a href="https://www.offensive-security.com/wifu-oswp/">PEN-210 (WiFu/OSWP)</a>
+        
+        
+        <a href="https://www.offensive-security.com/pen300-osep/">PEN-300 (ETBD/OSEP)</a>
+        
+        
+        <a href="https://www.offensive-security.com/web200-oswa/">WEB-200 (WAWK/OSWA)</a>
+        
+        
+        <a href="https://www.offensive-security.com/awae-oswe/">WEB-300 (AWAE/OSWE)</a>
+        
+        
+        <a href="https://www.offensive-security.com/exp301-osed/">EXP-301 (WUMED/OSED)</a>
+        
+        
+        <a href="https://www.offensive-security.com/exp312-osmr/">EXP-312 (MCB/OSMR)</a>
+        
+        
+        <a href="https://www.offensive-security.com/awe-osee/">EXP-401 (AWE/OSEE)</a>
+        
+        
+        <a href="https://www.offensive-security.com/soc200-osda/">SOC-200 (AWE/OSDA)</a>
+        
+      </div>
+    </li>
+      
+    
+    
+    <li class="dropdown-menu">
+      <span>Developers <i class="ti-angle-down"></i></span>
+      <div>
+        
+        
+        <a href="https://gitlab.com/kalilinux">Git Repositories</a>
+        
+        
+        <a href="https://pkg.kali.org/">Packages</a>
+        
+        
+        <a href="https://autopkgtest.kali.org/">Auto Package Test</a>
+        
+        
+        <a href="https://bugs.kali.org/">Bug Tracker</a>
+        
+        
+        <a href="https://stats.nethunter.com/">Kali NetHunter Stats</a>
+        
+      </div>
+    </li>
+      
+    
+    
+    <li class="dropdown-menu">
+      <span>About <i class="ti-angle-down"></i></span>
+      <div>
+        
+        
+        <a href="http://www.kali.org/features/">Kali Linux Overview</a>
+        
+        
+        <a href="https://gitlab.com/kalilinux/documentation/graphic-resources">Gallery &amp; Press Pack</a>
+        
+        
+        <a href="http://www.kali.org/about-us/">Meet The Kali Team</a>
+        
+        
+        <a href="http://www.kali.org/partnerships-sponsorships/">Partnerships &amp; Friends</a>
+        
+        
+        <a href="http://www.kali.org/contact/">Contact Us</a>
+        
+      </div>
+    </li>
+      
+    
+  </ul>
+  <button title="show menu">
+    <div></div>
+    <div></div>
+    <div></div>
+  </button>
+</nav>
+
+      
+
+<div class="container" id="banner">
+  <h1></h1>
+  <p></p>
+  <div id="searchbar">
+    <input placeholder="Want to know more about Kali? Search for it here!" autofocus>
+    <i class="ti-search"></i>
+    <ul id="search-result"></ul>
+  </div>
+</div>
+
+<style>
+  header {
+    background-image: url("images/browser-home-page-banner.jpg");
+  }
+
+  #banner {
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+    position: relative;
+  }
+
+  #banner h1 {
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  }
+
+  #banner p {
+    color: white;
+    font-size: 20px;
+    opacity: .8;
+  }
+
+  #searchbar {
+    --input-height: 50px;
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+  }
+
+  #searchbar input {
+    width: 100%;
+    height: var(--input-height);
+    border-radius: calc(var(--input-height) / 2);
+    border: 0;
+    padding: 0 50px 0 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #495057;
+    outline: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  }
+
+  #searchbar input.expanded {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  #searchbar i {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    font-size: 14px;
+    color: black;
+  }
+
+  #search-result {
+    position: absolute;
+    max-height: 220px;
+    width: 100%;
+    border-radius: 0 0 calc(var(--input-height) / 2) calc(var(--input-height) / 2);
+    z-index: 1;
+    overflow: auto;
+    text-align: left;
+    line-height: 2em;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .2);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  #search-result::-webkit-scrollbar { display: none; }
+
+  #search-result li {
+    border-bottom: 1px solid #e8e8e8;
+    background: white;
+    padding: 0;
+  }
+
+  #search-result li a {
+    display: block;
+    padding: 4px 20px;
+  }
+
+  #search-result li a:focus { background: rgba(0, 0, 0, .05); }
+
+  #search-result li::before { display: none; }
+
+  #search-result li:last-child {
+    padding: 10px 20px;
+    background: #1A1A1A;
+    box-shadow: inset 0 7px 3px -5px rgba(0, 0, 0, .1);
+    border-bottom: 0;
+    font-weight: bold;
+  }
+
+  #search-result li:last-child a { color: white; }
+</style>
+
+<script>
+  {
+    const PAGES = [
+      
+      
+      
+      {
+        value: "Kali Linux Metapackages",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/metapackages\/"
+      },
+      
+      {
+        value: "All about sudo",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/sudo\/"
+      },
+      
+      {
+        value: "Setting Up A System For Packaging",
+        url:"http:\/\/www.kali.org\/docs\/development\/setting-up-packaging-system\/"
+      },
+      
+      {
+        value: "What is Kali Linux?",
+        url:"http:\/\/www.kali.org\/docs\/introduction\/what-is-kali-linux\/"
+      },
+      
+      {
+        value: "Introduction",
+        url:"http:\/\/www.kali.org\/docs\/introduction\/"
+      },
+      
+      {
+        value: "Kali Linux Xfce FAQ",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/xfce-faq\/"
+      },
+      
+      {
+        value: "Introduction to packaging step-by-step example",
+        url:"http:\/\/www.kali.org\/docs\/development\/intro-to-packaging-example\/"
+      },
+      
+      {
+        value: "Common Cloud Based Setup Information",
+        url:"http:\/\/www.kali.org\/docs\/troubleshooting\/common-cloud-setup\/"
+      },
+      
+      {
+        value: "Minimum Install Setup Information",
+        url:"http:\/\/www.kali.org\/docs\/troubleshooting\/common-minimum-setup\/"
+      },
+      
+      {
+        value: "Intermediate packaging step-by-step example",
+        url:"http:\/\/www.kali.org\/docs\/development\/intermediate-packaging-example\/"
+      },
+      
+      {
+        value: "Advanced Packaging Step-By-Step Example (FinalRecon \u0026 Python-icmplib)",
+        url:"http:\/\/www.kali.org\/docs\/development\/advanced-packaging-example\/"
+      },
+      
+      {
+        value: "Everything you need to know about the switch to Python 3",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/python3-transition\/"
+      },
+      
+      {
+        value: "Installation",
+        url:"http:\/\/www.kali.org\/docs\/installation\/"
+      },
+      
+      {
+        value: "Using EoL Python Versions on Kali",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/using-eol-python-versions\/"
+      },
+      
+      {
+        value: "Should I Use Kali Linux?",
+        url:"http:\/\/www.kali.org\/docs\/introduction\/should-i-use-kali-linux\/"
+      },
+      
+      {
+        value: "Virtualization",
+        url:"http:\/\/www.kali.org\/docs\/virtualization\/"
+      },
+      
+      {
+        value: "Getting the best out of the Kali Bot",
+        url:"http:\/\/www.kali.org\/docs\/development\/leveraging-the-kali-bot\/"
+      },
+      
+      {
+        value: "USB",
+        url:"http:\/\/www.kali.org\/docs\/usb\/"
+      },
+      
+      {
+        value: "Kali On ARM",
+        url:"http:\/\/www.kali.org\/docs\/arm\/"
+      },
+      
+      {
+        value: "Containers",
+        url:"http:\/\/www.kali.org\/docs\/containers\/"
+      },
+      
+      {
+        value: "Win-KeX ESM",
+        url:"http:\/\/www.kali.org\/docs\/wsl\/win-kex-esm\/"
+      },
+      
+      {
+        value: "WSL",
+        url:"http:\/\/www.kali.org\/docs\/wsl\/"
+      },
+      
+      {
+        value: "Cloud",
+        url:"http:\/\/www.kali.org\/docs\/cloud\/"
+      },
+      
+      {
+        value: "Which Image Should I Download?",
+        url:"http:\/\/www.kali.org\/docs\/introduction\/what-image-to-download\/"
+      },
+      
+      {
+        value: "Fixing DPI (Dots Per Inch) \/ Large Fonts",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/fixing-dpi\/"
+      },
+      
+      {
+        value: "HiDPI (High Dots Per Inch) Display",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/hidpi\/"
+      },
+      
+      {
+        value: "Kali NetHunter",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/"
+      },
+      
+      {
+        value: "Downloading Kali Linux",
+        url:"http:\/\/www.kali.org\/docs\/introduction\/download-official-kali-linux-images\/"
+      },
+      
+      {
+        value: "Making a Kali Bootable USB Drive (Linux)",
+        url:"http:\/\/www.kali.org\/docs\/usb\/live-usb-install-with-linux\/"
+      },
+      
+      {
+        value: "Making a Kali Bootable USB Drive (macOS\/OS X)",
+        url:"http:\/\/www.kali.org\/docs\/usb\/live-usb-install-with-mac\/"
+      },
+      
+      {
+        value: "Install NVIDIA GPU Drivers",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/install-nvidia-drivers-on-kali-linux\/"
+      },
+      
+      {
+        value: "Making a Kali Bootable USB Drive on Windows",
+        url:"http:\/\/www.kali.org\/docs\/usb\/live-usb-install-with-windows\/"
+      },
+      
+      {
+        value: "General Use",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/"
+      },
+      
+      {
+        value: "Generate an Updated Kali ISO",
+        url:"http:\/\/www.kali.org\/docs\/development\/generate-updated-kali-iso\/"
+      },
+      
+      {
+        value: "Creating A Custom Kali ISO",
+        url:"http:\/\/www.kali.org\/docs\/development\/live-build-a-custom-kali-iso\/"
+      },
+      
+      {
+        value: "Download Kali Linux Images Securely",
+        url:"http:\/\/www.kali.org\/docs\/introduction\/download-images-securely\/"
+      },
+      
+      {
+        value: "Building Custom Kali ISOs",
+        url:"http:\/\/www.kali.org\/docs\/development\/dojo-mastering-live-build\/"
+      },
+      
+      {
+        value: "Tools",
+        url:"http:\/\/www.kali.org\/docs\/tools\/"
+      },
+      
+      {
+        value: "Kali Branches",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/kali-branches\/"
+      },
+      
+      {
+        value: "Kali\u0027s Default Credentials",
+        url:"http:\/\/www.kali.org\/docs\/introduction\/default-credentials\/"
+      },
+      
+      {
+        value: "Rebuilding a Source Package",
+        url:"http:\/\/www.kali.org\/docs\/development\/rebuilding-a-package-from-source\/"
+      },
+      
+      {
+        value: "Troubleshooting",
+        url:"http:\/\/www.kali.org\/docs\/troubleshooting\/"
+      },
+      
+      {
+        value: "Kali Network Repositories (\/etc\/apt\/sources.list)",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/kali-linux-sources-list-repositories\/"
+      },
+      
+      {
+        value: "Recompiling the Kali Linux Kernel",
+        url:"http:\/\/www.kali.org\/docs\/development\/recompiling-the-kali-linux-kernel\/"
+      },
+      
+      {
+        value: "Get the latest unreleased features and bug fixes with Kali Bleeding Edge",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/kali-bleeding-edge\/"
+      },
+      
+      {
+        value: "Kali Development",
+        url:"http:\/\/www.kali.org\/docs\/development\/"
+      },
+      
+      {
+        value: "Community",
+        url:"http:\/\/www.kali.org\/docs\/community\/"
+      },
+      
+      {
+        value: "Preparing a Kali Linux ARM chroot",
+        url:"http:\/\/www.kali.org\/docs\/development\/kali-linux-arm-chroot\/"
+      },
+      
+      {
+        value: "ARM Cross-Compilation",
+        url:"http:\/\/www.kali.org\/docs\/development\/arm-cross-compilation-environment\/"
+      },
+      
+      {
+        value: "Standalone Kali Linux 2021.4 Installation on a USB Drive, Fully Encrypted",
+        url:"http:\/\/www.kali.org\/docs\/usb\/usb-standalone-encrypted\/"
+      },
+      
+      {
+        value: "Policy",
+        url:"http:\/\/www.kali.org\/docs\/policy\/"
+      },
+      
+      {
+        value: "Updating Kali Linux on USB",
+        url:"http:\/\/www.kali.org\/docs\/usb\/updating-kali-on-usb\/"
+      },
+      
+      {
+        value: "Adding Persistence to a Kali Linux Live USB Drive",
+        url:"http:\/\/www.kali.org\/docs\/usb\/usb-persistence\/"
+      },
+      
+      {
+        value: "Installing Kali Linux",
+        url:"http:\/\/www.kali.org\/docs\/installation\/hard-disk-install\/"
+      },
+      
+      {
+        value: "Kali Undercover",
+        url:"http:\/\/www.kali.org\/docs\/introduction\/kali-undercover\/"
+      },
+      
+      {
+        value: "Installing VMware on Kali (Host)",
+        url:"http:\/\/www.kali.org\/docs\/virtualization\/install-vmware-host\/"
+      },
+      
+      {
+        value: "Packaging Applications with Kaboxer",
+        url:"http:\/\/www.kali.org\/docs\/development\/packaging-apps-with-kaboxer\/"
+      },
+      
+      {
+        value: "Installing VirtualBox on Kali (Host)",
+        url:"http:\/\/www.kali.org\/docs\/virtualization\/install-virtualbox-host\/"
+      },
+      
+      {
+        value: "Installing Kali on Mac Hardware",
+        url:"http:\/\/www.kali.org\/docs\/installation\/hard-disk-install-on-mac\/"
+      },
+      
+      {
+        value: "Adding Encrypted Persistence to a Kali Linux Live USB Drive",
+        url:"http:\/\/www.kali.org\/docs\/usb\/usb-persistence-encryption\/"
+      },
+      
+      {
+        value: "Kali inside VMware (Guest VM)",
+        url:"http:\/\/www.kali.org\/docs\/virtualization\/install-vmware-guest-vm\/"
+      },
+      
+      {
+        value: "Kali inside Parallels (Guest VM)",
+        url:"http:\/\/www.kali.org\/docs\/virtualization\/install-parallels-guest-vm\/"
+      },
+      
+      {
+        value: "Dual Booting Kali with Linux",
+        url:"http:\/\/www.kali.org\/docs\/installation\/dual-boot-kali-with-linux\/"
+      },
+      
+      {
+        value: "USB Boot in a VM",
+        url:"http:\/\/www.kali.org\/docs\/usb\/boot-usb-in-a-vm\/"
+      },
+      
+      {
+        value: "Dual Booting Kali with macOS\/OS X",
+        url:"http:\/\/www.kali.org\/docs\/installation\/dual-boot-kali-with-mac\/"
+      },
+      
+      {
+        value: "NetHunter Bluetooth-Arsenal",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-btarsenal\/"
+      },
+      
+      {
+        value: "Kali inside VirtualBox (Guest VM)",
+        url:"http:\/\/www.kali.org\/docs\/virtualization\/install-virtualbox-guest-vm\/"
+      },
+      
+      {
+        value: "Dual Booting Kali with Windows",
+        url:"http:\/\/www.kali.org\/docs\/installation\/dual-boot-kali-with-windows\/"
+      },
+      
+      {
+        value: "Installing VMware Tools (Guest Tools)",
+        url:"http:\/\/www.kali.org\/docs\/virtualization\/install-vmware-guest-tools\/"
+      },
+      
+      {
+        value: "BTRFS Install",
+        url:"http:\/\/www.kali.org\/docs\/installation\/btrfs\/"
+      },
+      
+      {
+        value: "Installing VirtualBox Guest Addition (Guest Tools)",
+        url:"http:\/\/www.kali.org\/docs\/virtualization\/install-virtualbox-guest-additions\/"
+      },
+      
+      {
+        value: "Installing Hyper-V Enhanced Session Mode (Guest Tools)",
+        url:"http:\/\/www.kali.org\/docs\/virtualization\/install-hyper-v-guest-enhanced-session-mode\/"
+      },
+      
+      {
+        value: "Converting VMX to an OVA",
+        url:"http:\/\/www.kali.org\/docs\/virtualization\/converting-vmx-to-ova\/"
+      },
+      
+      {
+        value: "Deploying Kali over Network PXE\/iPXE Install",
+        url:"http:\/\/www.kali.org\/docs\/installation\/network-pxe\/"
+      },
+      
+      {
+        value: "Kali Press Release",
+        url:"http:\/\/www.kali.org\/docs\/introduction\/press-release\/"
+      },
+      
+      {
+        value: "Kali Linux History",
+        url:"http:\/\/www.kali.org\/docs\/introduction\/kali-linux-history\/"
+      },
+      
+      {
+        value: "Kali ARM History",
+        url:"http:\/\/www.kali.org\/docs\/introduction\/kali-on-arm-a-bit-of-history\/"
+      },
+      
+      {
+        value: "Kali NetHunter History",
+        url:"http:\/\/www.kali.org\/docs\/introduction\/kali-nethunter-history\/"
+      },
+      
+      {
+        value: "Kali Linux",
+        url:"http:\/\/www.kali.org\/"
+      },
+      
+      {
+        value: "Kali Tools",
+        url:"http:\/\/www.kali.org\/tools\/"
+      },
+      
+      {
+        value: "Setting Up a Kali Linux Mirror",
+        url:"http:\/\/www.kali.org\/docs\/community\/setting-up-a-kali-linux-mirror\/"
+      },
+      
+      {
+        value: "OpenSSL Configuration",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/openssl-configuration\/"
+      },
+      
+      {
+        value: "Cookie Policy",
+        url:"http:\/\/www.kali.org\/docs\/policy\/cookie\/"
+      },
+      
+      {
+        value: "Custom ODROID X2 U2 Image",
+        url:"http:\/\/www.kali.org\/docs\/development\/custom-odroid-kernel-image\/"
+      },
+      
+      {
+        value: "Installing NetHunter On the Gemini PDA",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/installing-nethunter-on-the-gemini-pda\/"
+      },
+      
+      {
+        value: "Installing NetHunter On the TicWatch Pro",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/installing-nethunter-on-the-ticwatch-pro\/"
+      },
+      
+      {
+        value: "NetHunter KeX Manager",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-kex-manager\/"
+      },
+      
+      {
+        value: "Pi-Tail",
+        url:"http:\/\/www.kali.org\/docs\/arm\/raspberry-pi-zero-w-pi-tail\/"
+      },
+      
+      {
+        value: "Samba Configuration",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/samba-configuration\/"
+      },
+      
+      {
+        value: "SSH Configuration",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/ssh-configuration\/"
+      },
+      
+      {
+        value: "Blogs",
+        url:"http:\/\/www.kali.org\/blog\/"
+      },
+      
+      {
+        value: "Kali\u0027s stable Docker image is now named kali-last-release",
+        url:"http:\/\/www.kali.org\/blog\/renaming-kali-stable-docker-image\/"
+      },
+      
+      {
+        value: "Kali In The Browser (Guacamole)",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/guacamole-kali-in-browser\/"
+      },
+      
+      {
+        value: "Official Kali Linux Docker Images",
+        url:"http:\/\/www.kali.org\/docs\/containers\/official-kalilinux-docker-images\/"
+      },
+      
+      {
+        value: "Installing Docker on Kali Linux",
+        url:"http:\/\/www.kali.org\/docs\/containers\/installing-docker-on-kali\/"
+      },
+      
+      {
+        value: "Acer Tegra Chromebook 13\u0022 (Nyan)",
+        url:"http:\/\/www.kali.org\/docs\/arm\/acer-tegra-chromebook-13\/"
+      },
+      
+      {
+        value: "ASUS Chromebook Flip (Veyron)",
+        url:"http:\/\/www.kali.org\/docs\/arm\/asus-chromebook-flip\/"
+      },
+      
+      {
+        value: "CubieBoard2",
+        url:"http:\/\/www.kali.org\/docs\/arm\/cubieboard2\/"
+      },
+      
+      {
+        value: "CubieTruck (CubieBoard3)",
+        url:"http:\/\/www.kali.org\/docs\/arm\/cubietruck\/"
+      },
+      
+      {
+        value: "CuBox",
+        url:"http:\/\/www.kali.org\/docs\/arm\/cubox\/"
+      },
+      
+      {
+        value: "HP ARM Chromebook (daisy_spring)",
+        url:"http:\/\/www.kali.org\/docs\/arm\/hp-chromebook\/"
+      },
+      
+      {
+        value: "i.MX 6ULL EVK",
+        url:"http:\/\/www.kali.org\/docs\/arm\/imx-6ull-evk\/"
+      },
+      
+      {
+        value: "Kali Linux Network Service Policy",
+        url:"http:\/\/www.kali.org\/docs\/policy\/kali-linux-network-service-policy\/"
+      },
+      
+      {
+        value: "Mini-X",
+        url:"http:\/\/www.kali.org\/docs\/arm\/mini-x\/"
+      },
+      
+      {
+        value: "NanoPi2",
+        url:"http:\/\/www.kali.org\/docs\/arm\/nanopi2\/"
+      },
+      
+      {
+        value: "ODROID-C0\/C1\/C1\u002b",
+        url:"http:\/\/www.kali.org\/docs\/arm\/odroid-c\/"
+      },
+      
+      {
+        value: "ODROID-U2\/U3",
+        url:"http:\/\/www.kali.org\/docs\/arm\/odroid-u\/"
+      },
+      
+      {
+        value: "ODROID-XU3",
+        url:"http:\/\/www.kali.org\/docs\/arm\/odroid-xu3\/"
+      },
+      
+      {
+        value: "Pinebook Pro",
+        url:"http:\/\/www.kali.org\/docs\/arm\/pinebook-pro\/"
+      },
+      
+      {
+        value: "Raspberry Pi 2 v1.2",
+        url:"http:\/\/www.kali.org\/docs\/arm\/raspberry-pi-2-1.2\/"
+      },
+      
+      {
+        value: "RIoTboard",
+        url:"http:\/\/www.kali.org\/docs\/arm\/riotboard\/"
+      },
+      
+      {
+        value: "Samsung Chromebook (daisy_snow)",
+        url:"http:\/\/www.kali.org\/docs\/arm\/samsung-chromebook\/"
+      },
+      
+      {
+        value: "Samsung Chromebook 2 (peach_pi)",
+        url:"http:\/\/www.kali.org\/docs\/arm\/samsung-chromebook-2\/"
+      },
+      
+      {
+        value: "Trimslice",
+        url:"http:\/\/www.kali.org\/docs\/arm\/trimslice\/"
+      },
+      
+      {
+        value: "Kali Linux 2021.4 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2021-4-release\/"
+      },
+      
+      {
+        value: "Gateworks Newport",
+        url:"http:\/\/www.kali.org\/docs\/arm\/gateworks-newport\/"
+      },
+      
+      {
+        value: "Banana Pi",
+        url:"http:\/\/www.kali.org\/docs\/arm\/banana-pi\/"
+      },
+      
+      {
+        value: "Banana Pro",
+        url:"http:\/\/www.kali.org\/docs\/arm\/banana-pro\/"
+      },
+      
+      {
+        value: "BeagleBone Black",
+        url:"http:\/\/www.kali.org\/docs\/arm\/beaglebone-black\/"
+      },
+      
+      {
+        value: "CuBox-i4Pro",
+        url:"http:\/\/www.kali.org\/docs\/arm\/cubox-i4pro\/"
+      },
+      
+      {
+        value: "Gateworks Ventana",
+        url:"http:\/\/www.kali.org\/docs\/arm\/gateworks-ventana\/"
+      },
+      
+      {
+        value: "NanoPC-T3",
+        url:"http:\/\/www.kali.org\/docs\/arm\/nanopc-t3\/"
+      },
+      
+      {
+        value: "NanoPi NEO Plus2",
+        url:"http:\/\/www.kali.org\/docs\/arm\/nanopi-neo-plus2\/"
+      },
+      
+      {
+        value: "ODROID-C2",
+        url:"http:\/\/www.kali.org\/docs\/arm\/odroid-c2\/"
+      },
+      
+      {
+        value: "Pinebook",
+        url:"http:\/\/www.kali.org\/docs\/arm\/pinebook\/"
+      },
+      
+      {
+        value: "Raspberry Pi",
+        url:"http:\/\/www.kali.org\/docs\/arm\/raspberry-pi\/"
+      },
+      
+      {
+        value: "Raspberry Pi 2",
+        url:"http:\/\/www.kali.org\/docs\/arm\/raspberry-pi-2\/"
+      },
+      
+      {
+        value: "Raspberry Pi 3",
+        url:"http:\/\/www.kali.org\/docs\/arm\/raspberry-pi-3\/"
+      },
+      
+      {
+        value: "Raspberry Pi 4",
+        url:"http:\/\/www.kali.org\/docs\/arm\/raspberry-pi-4\/"
+      },
+      
+      {
+        value: "Raspberry Pi 400",
+        url:"http:\/\/www.kali.org\/docs\/arm\/raspberry-pi-400\/"
+      },
+      
+      {
+        value: "Raspberry Pi Zero",
+        url:"http:\/\/www.kali.org\/docs\/arm\/raspberry-pi-zero\/"
+      },
+      
+      {
+        value: "Raspberry Pi Zero 2 W",
+        url:"http:\/\/www.kali.org\/docs\/arm\/raspberry-pi-zero-2-w\/"
+      },
+      
+      {
+        value: "Raspberry Pi Zero W",
+        url:"http:\/\/www.kali.org\/docs\/arm\/raspberry-pi-zero-w\/"
+      },
+      
+      {
+        value: "USB Armory MKI",
+        url:"http:\/\/www.kali.org\/docs\/arm\/usb-armory-mki\/"
+      },
+      
+      {
+        value: "USB Armory MKII",
+        url:"http:\/\/www.kali.org\/docs\/arm\/usb-armory-mkii\/"
+      },
+      
+      {
+        value: "Utilite Pro",
+        url:"http:\/\/www.kali.org\/docs\/arm\/utilite-pro\/"
+      },
+      
+      {
+        value: "wordlists",
+        url:"http:\/\/www.kali.org\/tools\/wordlists\/"
+      },
+      
+      {
+        value: "bind9",
+        url:"http:\/\/www.kali.org\/tools\/bind9\/"
+      },
+      
+      {
+        value: "bing-ip2hosts",
+        url:"http:\/\/www.kali.org\/tools\/bing-ip2hosts\/"
+      },
+      
+      {
+        value: "cmseek",
+        url:"http:\/\/www.kali.org\/tools\/cmseek\/"
+      },
+      
+      {
+        value: "crack",
+        url:"http:\/\/www.kali.org\/tools\/crack\/"
+      },
+      
+      {
+        value: "crackmapexec",
+        url:"http:\/\/www.kali.org\/tools\/crackmapexec\/"
+      },
+      
+      {
+        value: "dc3dd",
+        url:"http:\/\/www.kali.org\/tools\/dc3dd\/"
+      },
+      
+      {
+        value: "dradis",
+        url:"http:\/\/www.kali.org\/tools\/dradis\/"
+      },
+      
+      {
+        value: "ettercap",
+        url:"http:\/\/www.kali.org\/tools\/ettercap\/"
+      },
+      
+      {
+        value: "expect",
+        url:"http:\/\/www.kali.org\/tools\/expect\/"
+      },
+      
+      {
+        value: "exploitdb",
+        url:"http:\/\/www.kali.org\/tools\/exploitdb\/"
+      },
+      
+      {
+        value: "flashrom",
+        url:"http:\/\/www.kali.org\/tools\/flashrom\/"
+      },
+      
+      {
+        value: "freerdp2",
+        url:"http:\/\/www.kali.org\/tools\/freerdp2\/"
+      },
+      
+      {
+        value: "git",
+        url:"http:\/\/www.kali.org\/tools\/git\/"
+      },
+      
+      {
+        value: "gvm",
+        url:"http:\/\/www.kali.org\/tools\/gvm\/"
+      },
+      
+      {
+        value: "httrack",
+        url:"http:\/\/www.kali.org\/tools\/httrack\/"
+      },
+      
+      {
+        value: "impacket-scripts",
+        url:"http:\/\/www.kali.org\/tools\/impacket-scripts\/"
+      },
+      
+      {
+        value: "intrace",
+        url:"http:\/\/www.kali.org\/tools\/intrace\/"
+      },
+      
+      {
+        value: "isr-evilgrade",
+        url:"http:\/\/www.kali.org\/tools\/isr-evilgrade\/"
+      },
+      
+      {
+        value: "ivre",
+        url:"http:\/\/www.kali.org\/tools\/ivre\/"
+      },
+      
+      {
+        value: "john",
+        url:"http:\/\/www.kali.org\/tools\/john\/"
+      },
+      
+      {
+        value: "jsql",
+        url:"http:\/\/www.kali.org\/tools\/jsql\/"
+      },
+      
+      {
+        value: "kali-defaults",
+        url:"http:\/\/www.kali.org\/tools\/kali-defaults\/"
+      },
+      
+      {
+        value: "maltego",
+        url:"http:\/\/www.kali.org\/tools\/maltego\/"
+      },
+      
+      {
+        value: "mercurial",
+        url:"http:\/\/www.kali.org\/tools\/mercurial\/"
+      },
+      
+      {
+        value: "metasploit-framework",
+        url:"http:\/\/www.kali.org\/tools\/metasploit-framework\/"
+      },
+      
+      {
+        value: "ohrwurm",
+        url:"http:\/\/www.kali.org\/tools\/ohrwurm\/"
+      },
+      
+      {
+        value: "openssh",
+        url:"http:\/\/www.kali.org\/tools\/openssh\/"
+      },
+      
+      {
+        value: "plocate",
+        url:"http:\/\/www.kali.org\/tools\/plocate\/"
+      },
+      
+      {
+        value: "powershell-empire",
+        url:"http:\/\/www.kali.org\/tools\/powershell-empire\/"
+      },
+      
+      {
+        value: "samba",
+        url:"http:\/\/www.kali.org\/tools\/samba\/"
+      },
+      
+      {
+        value: "set",
+        url:"http:\/\/www.kali.org\/tools\/set\/"
+      },
+      
+      {
+        value: "sfuzz",
+        url:"http:\/\/www.kali.org\/tools\/sfuzz\/"
+      },
+      
+      {
+        value: "spiderfoot",
+        url:"http:\/\/www.kali.org\/tools\/spiderfoot\/"
+      },
+      
+      {
+        value: "sqlmap",
+        url:"http:\/\/www.kali.org\/tools\/sqlmap\/"
+      },
+      
+      {
+        value: "sslyze",
+        url:"http:\/\/www.kali.org\/tools\/sslyze\/"
+      },
+      
+      {
+        value: "tcpflow",
+        url:"http:\/\/www.kali.org\/tools\/tcpflow\/"
+      },
+      
+      {
+        value: "theharvester",
+        url:"http:\/\/www.kali.org\/tools\/theharvester\/"
+      },
+      
+      {
+        value: "tlssled",
+        url:"http:\/\/www.kali.org\/tools\/tlssled\/"
+      },
+      
+      {
+        value: "usbutils",
+        url:"http:\/\/www.kali.org\/tools\/usbutils\/"
+      },
+      
+      {
+        value: "util-linux",
+        url:"http:\/\/www.kali.org\/tools\/util-linux\/"
+      },
+      
+      {
+        value: "wapiti",
+        url:"http:\/\/www.kali.org\/tools\/wapiti\/"
+      },
+      
+      {
+        value: "watobo",
+        url:"http:\/\/www.kali.org\/tools\/watobo\/"
+      },
+      
+      {
+        value: "wifi-honey",
+        url:"http:\/\/www.kali.org\/tools\/wifi-honey\/"
+      },
+      
+      {
+        value: "xmount",
+        url:"http:\/\/www.kali.org\/tools\/xmount\/"
+      },
+      
+      {
+        value: "xplico",
+        url:"http:\/\/www.kali.org\/tools\/xplico\/"
+      },
+      
+      {
+        value: "yersinia",
+        url:"http:\/\/www.kali.org\/tools\/yersinia\/"
+      },
+      
+      {
+        value: "zaproxy",
+        url:"http:\/\/www.kali.org\/tools\/zaproxy\/"
+      },
+      
+      {
+        value: "aflplusplus",
+        url:"http:\/\/www.kali.org\/tools\/aflplusplus\/"
+      },
+      
+      {
+        value: "amass",
+        url:"http:\/\/www.kali.org\/tools\/amass\/"
+      },
+      
+      {
+        value: "android-sdk",
+        url:"http:\/\/www.kali.org\/tools\/android-sdk\/"
+      },
+      
+      {
+        value: "apache2",
+        url:"http:\/\/www.kali.org\/tools\/apache2\/"
+      },
+      
+      {
+        value: "asleap",
+        url:"http:\/\/www.kali.org\/tools\/asleap\/"
+      },
+      
+      {
+        value: "atftp",
+        url:"http:\/\/www.kali.org\/tools\/atftp\/"
+      },
+      
+      {
+        value: "beef-xss",
+        url:"http:\/\/www.kali.org\/tools\/beef-xss\/"
+      },
+      
+      {
+        value: "bulk-extractor",
+        url:"http:\/\/www.kali.org\/tools\/bulk-extractor\/"
+      },
+      
+      {
+        value: "cherrytree",
+        url:"http:\/\/www.kali.org\/tools\/cherrytree\/"
+      },
+      
+      {
+        value: "chkrootkit",
+        url:"http:\/\/www.kali.org\/tools\/chkrootkit\/"
+      },
+      
+      {
+        value: "chromium",
+        url:"http:\/\/www.kali.org\/tools\/chromium\/"
+      },
+      
+      {
+        value: "commix",
+        url:"http:\/\/www.kali.org\/tools\/commix\/"
+      },
+      
+      {
+        value: "creddump7",
+        url:"http:\/\/www.kali.org\/tools\/creddump7\/"
+      },
+      
+      {
+        value: "cryptsetup",
+        url:"http:\/\/www.kali.org\/tools\/cryptsetup\/"
+      },
+      
+      {
+        value: "dfdatetime",
+        url:"http:\/\/www.kali.org\/tools\/dfdatetime\/"
+      },
+      
+      {
+        value: "dirbuster",
+        url:"http:\/\/www.kali.org\/tools\/dirbuster\/"
+      },
+      
+      {
+        value: "dislocker",
+        url:"http:\/\/www.kali.org\/tools\/dislocker\/"
+      },
+      
+      {
+        value: "dnstracer",
+        url:"http:\/\/www.kali.org\/tools\/dnstracer\/"
+      },
+      
+      {
+        value: "dos2unix",
+        url:"http:\/\/www.kali.org\/tools\/dos2unix\/"
+      },
+      
+      {
+        value: "exiv2",
+        url:"http:\/\/www.kali.org\/tools\/exiv2\/"
+      },
+      
+      {
+        value: "eyewitness",
+        url:"http:\/\/www.kali.org\/tools\/eyewitness\/"
+      },
+      
+      {
+        value: "feroxbuster",
+        url:"http:\/\/www.kali.org\/tools\/feroxbuster\/"
+      },
+      
+      {
+        value: "ffuf",
+        url:"http:\/\/www.kali.org\/tools\/ffuf\/"
+      },
+      
+      {
+        value: "firefox-developer-edition-kbx",
+        url:"http:\/\/www.kali.org\/tools\/firefox-developer-edition-kbx\/"
+      },
+      
+      {
+        value: "firewalk",
+        url:"http:\/\/www.kali.org\/tools\/firewalk\/"
+      },
+      
+      {
+        value: "firmware-sof",
+        url:"http:\/\/www.kali.org\/tools\/firmware-sof\/"
+      },
+      
+      {
+        value: "foremost",
+        url:"http:\/\/www.kali.org\/tools\/foremost\/"
+      },
+      
+      {
+        value: "forensic-artifacts",
+        url:"http:\/\/www.kali.org\/tools\/forensic-artifacts\/"
+      },
+      
+      {
+        value: "forensics-colorize",
+        url:"http:\/\/www.kali.org\/tools\/forensics-colorize\/"
+      },
+      
+      {
+        value: "framework2",
+        url:"http:\/\/www.kali.org\/tools\/framework2\/"
+      },
+      
+      {
+        value: "gnuradio",
+        url:"http:\/\/www.kali.org\/tools\/gnuradio\/"
+      },
+      
+      {
+        value: "gpart",
+        url:"http:\/\/www.kali.org\/tools\/gpart\/"
+      },
+      
+      {
+        value: "gqrx-sdr",
+        url:"http:\/\/www.kali.org\/tools\/gqrx-sdr\/"
+      },
+      
+      {
+        value: "gr-osmosdr",
+        url:"http:\/\/www.kali.org\/tools\/gr-osmosdr\/"
+      },
+      
+      {
+        value: "gss-ntlmssp",
+        url:"http:\/\/www.kali.org\/tools\/gss-ntlmssp\/"
+      },
+      
+      {
+        value: "hashdeep",
+        url:"http:\/\/www.kali.org\/tools\/hashdeep\/"
+      },
+      
+      {
+        value: "hivex",
+        url:"http:\/\/www.kali.org\/tools\/hivex\/"
+      },
+      
+      {
+        value: "htshells",
+        url:"http:\/\/www.kali.org\/tools\/htshells\/"
+      },
+      
+      {
+        value: "ifenslave",
+        url:"http:\/\/www.kali.org\/tools\/ifenslave\/"
+      },
+      
+      {
+        value: "ike-scan",
+        url:"http:\/\/www.kali.org\/tools\/ike-scan\/"
+      },
+      
+      {
+        value: "impacket",
+        url:"http:\/\/www.kali.org\/tools\/impacket\/"
+      },
+      
+      {
+        value: "initramfs-tools",
+        url:"http:\/\/www.kali.org\/tools\/initramfs-tools\/"
+      },
+      
+      {
+        value: "Installing Flatpak on Kali Linux",
+        url:"http:\/\/www.kali.org\/docs\/tools\/flatpak\/"
+      },
+      
+      {
+        value: "irpas",
+        url:"http:\/\/www.kali.org\/tools\/irpas\/"
+      },
+      
+      {
+        value: "jadx",
+        url:"http:\/\/www.kali.org\/tools\/jadx\/"
+      },
+      
+      {
+        value: "kali-meta",
+        url:"http:\/\/www.kali.org\/tools\/kali-meta\/"
+      },
+      
+      {
+        value: "kali-tweaks",
+        url:"http:\/\/www.kali.org\/tools\/kali-tweaks\/"
+      },
+      
+      {
+        value: "king-phisher",
+        url:"http:\/\/www.kali.org\/tools\/king-phisher\/"
+      },
+      
+      {
+        value: "laudanum",
+        url:"http:\/\/www.kali.org\/tools\/laudanum\/"
+      },
+      
+      {
+        value: "llvm-defaults",
+        url:"http:\/\/www.kali.org\/tools\/llvm-defaults\/"
+      },
+      
+      {
+        value: "maskprocessor",
+        url:"http:\/\/www.kali.org\/tools\/maskprocessor\/"
+      },
+      
+      {
+        value: "mdbtools",
+        url:"http:\/\/www.kali.org\/tools\/mdbtools\/"
+      },
+      
+      {
+        value: "mdk3",
+        url:"http:\/\/www.kali.org\/tools\/mdk3\/"
+      },
+      
+      {
+        value: "mdk4",
+        url:"http:\/\/www.kali.org\/tools\/mdk4\/"
+      },
+      
+      {
+        value: "ncat-w32",
+        url:"http:\/\/www.kali.org\/tools\/ncat-w32\/"
+      },
+      
+      {
+        value: "net-snmp",
+        url:"http:\/\/www.kali.org\/tools\/net-snmp\/"
+      },
+      
+      {
+        value: "netbase",
+        url:"http:\/\/www.kali.org\/tools\/netbase\/"
+      },
+      
+      {
+        value: "netdiscover",
+        url:"http:\/\/www.kali.org\/tools\/netdiscover\/"
+      },
+      
+      {
+        value: "netkit-ftp",
+        url:"http:\/\/www.kali.org\/tools\/netkit-ftp\/"
+      },
+      
+      {
+        value: "netsniff-ng",
+        url:"http:\/\/www.kali.org\/tools\/netsniff-ng\/"
+      },
+      
+      {
+        value: "ngrep",
+        url:"http:\/\/www.kali.org\/tools\/ngrep\/"
+      },
+      
+      {
+        value: "nishang",
+        url:"http:\/\/www.kali.org\/tools\/nishang\/"
+      },
+      
+      {
+        value: "nmap",
+        url:"http:\/\/www.kali.org\/tools\/nmap\/"
+      },
+      
+      {
+        value: "ophcrack",
+        url:"http:\/\/www.kali.org\/tools\/ophcrack\/"
+      },
+      
+      {
+        value: "p7zip",
+        url:"http:\/\/www.kali.org\/tools\/p7zip\/"
+      },
+      
+      {
+        value: "patator",
+        url:"http:\/\/www.kali.org\/tools\/patator\/"
+      },
+      
+      {
+        value: "pdf-parser",
+        url:"http:\/\/www.kali.org\/tools\/pdf-parser\/"
+      },
+      
+      {
+        value: "pev",
+        url:"http:\/\/www.kali.org\/tools\/pev\/"
+      },
+      
+      {
+        value: "php-defaults",
+        url:"http:\/\/www.kali.org\/tools\/php-defaults\/"
+      },
+      
+      {
+        value: "powershell",
+        url:"http:\/\/www.kali.org\/tools\/powershell\/"
+      },
+      
+      {
+        value: "princeprocessor",
+        url:"http:\/\/www.kali.org\/tools\/princeprocessor\/"
+      },
+      
+      {
+        value: "proxychains-ng",
+        url:"http:\/\/www.kali.org\/tools\/proxychains-ng\/"
+      },
+      
+      {
+        value: "python-faraday",
+        url:"http:\/\/www.kali.org\/tools\/python-faraday\/"
+      },
+      
+      {
+        value: "qemu",
+        url:"http:\/\/www.kali.org\/tools\/qemu\/"
+      },
+      
+      {
+        value: "recoverdm",
+        url:"http:\/\/www.kali.org\/tools\/recoverdm\/"
+      },
+      
+      {
+        value: "responder",
+        url:"http:\/\/www.kali.org\/tools\/responder\/"
+      },
+      
+      {
+        value: "shellter",
+        url:"http:\/\/www.kali.org\/tools\/shellter\/"
+      },
+      
+      {
+        value: "spraykatz",
+        url:"http:\/\/www.kali.org\/tools\/spraykatz\/"
+      },
+      
+      {
+        value: "statsprocessor",
+        url:"http:\/\/www.kali.org\/tools\/statsprocessor\/"
+      },
+      
+      {
+        value: "subversion",
+        url:"http:\/\/www.kali.org\/tools\/subversion\/"
+      },
+      
+      {
+        value: "tcpdump",
+        url:"http:\/\/www.kali.org\/tools\/tcpdump\/"
+      },
+      
+      {
+        value: "teamsploit",
+        url:"http:\/\/www.kali.org\/tools\/teamsploit\/"
+      },
+      
+      {
+        value: "testssl.sh",
+        url:"http:\/\/www.kali.org\/tools\/testssl.sh\/"
+      },
+      
+      {
+        value: "thc-pptp-bruter",
+        url:"http:\/\/www.kali.org\/tools\/thc-pptp-bruter\/"
+      },
+      
+      {
+        value: "thc-ssl-dos",
+        url:"http:\/\/www.kali.org\/tools\/thc-ssl-dos\/"
+      },
+      
+      {
+        value: "tightvnc",
+        url:"http:\/\/www.kali.org\/tools\/tightvnc\/"
+      },
+      
+      {
+        value: "tmux",
+        url:"http:\/\/www.kali.org\/tools\/tmux\/"
+      },
+      
+      {
+        value: "u-boot",
+        url:"http:\/\/www.kali.org\/tools\/u-boot\/"
+      },
+      
+      {
+        value: "udptunnel",
+        url:"http:\/\/www.kali.org\/tools\/udptunnel\/"
+      },
+      
+      {
+        value: "uhd",
+        url:"http:\/\/www.kali.org\/tools\/uhd\/"
+      },
+      
+      {
+        value: "unrar-nonfree",
+        url:"http:\/\/www.kali.org\/tools\/unrar-nonfree\/"
+      },
+      
+      {
+        value: "upx-ucl",
+        url:"http:\/\/www.kali.org\/tools\/upx-ucl\/"
+      },
+      
+      {
+        value: "urlcrazy",
+        url:"http:\/\/www.kali.org\/tools\/urlcrazy\/"
+      },
+      
+      {
+        value: "vim",
+        url:"http:\/\/www.kali.org\/tools\/vim\/"
+      },
+      
+      {
+        value: "winexe",
+        url:"http:\/\/www.kali.org\/tools\/winexe\/"
+      },
+      
+      {
+        value: "wireshark",
+        url:"http:\/\/www.kali.org\/tools\/wireshark\/"
+      },
+      
+      {
+        value: "wotmate",
+        url:"http:\/\/www.kali.org\/tools\/wotmate\/"
+      },
+      
+      {
+        value: "yara",
+        url:"http:\/\/www.kali.org\/tools\/yara\/"
+      },
+      
+      {
+        value: "zenmap-kbx",
+        url:"http:\/\/www.kali.org\/tools\/zenmap-kbx\/"
+      },
+      
+      {
+        value: "zim",
+        url:"http:\/\/www.kali.org\/tools\/zim\/"
+      },
+      
+      {
+        value: "zsh",
+        url:"http:\/\/www.kali.org\/tools\/zsh\/"
+      },
+      
+      {
+        value: "NetHunter DuckHunter Attacks",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-duckhunter\/"
+      },
+      
+      {
+        value: "Installing NetHunter On the OnePlus 7",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/installing-nethunter-on-the-oneplus-7\/"
+      },
+      
+      {
+        value: "Removed Tools From Kali",
+        url:"http:\/\/www.kali.org\/docs\/tools\/removed-tools\/"
+      },
+      
+      {
+        value: "Contributing run-time tests with autopkgtest",
+        url:"http:\/\/www.kali.org\/docs\/development\/contributing-runtime-tests\/"
+      },
+      
+      {
+        value: "Custom Beaglebone Black Image",
+        url:"http:\/\/www.kali.org\/docs\/development\/custom-beaglebone-black-image\/"
+      },
+      
+      {
+        value: "Custom Chromebook Image",
+        url:"http:\/\/www.kali.org\/docs\/development\/custom-chromebook-kernel-image\/"
+      },
+      
+      {
+        value: "Custom CuBox Image",
+        url:"http:\/\/www.kali.org\/docs\/development\/custom-cubox-image\/"
+      },
+      
+      {
+        value: "Custom EfikaMX Image",
+        url:"http:\/\/www.kali.org\/docs\/development\/custom-efikamx-image\/"
+      },
+      
+      {
+        value: "Custom MK\/SS808 Image",
+        url:"http:\/\/www.kali.org\/docs\/development\/custom-kali-arm-ss808-image\/"
+      },
+      
+      {
+        value: "Custom Raspberry Pi Image",
+        url:"http:\/\/www.kali.org\/docs\/development\/custom-raspberry-pi-image\/"
+      },
+      
+      {
+        value: "Metasploit Framework",
+        url:"http:\/\/www.kali.org\/docs\/tools\/starting-metasploit-framework-in-kali\/"
+      },
+      
+      {
+        value: "binwalk",
+        url:"http:\/\/www.kali.org\/tools\/binwalk\/"
+      },
+      
+      {
+        value: "bluez",
+        url:"http:\/\/www.kali.org\/tools\/bluez\/"
+      },
+      
+      {
+        value: "cifs-utils",
+        url:"http:\/\/www.kali.org\/tools\/cifs-utils\/"
+      },
+      
+      {
+        value: "Digital Ocean",
+        url:"http:\/\/www.kali.org\/docs\/cloud\/digitalocean\/"
+      },
+      
+      {
+        value: "dnscat2",
+        url:"http:\/\/www.kali.org\/tools\/dnscat2\/"
+      },
+      
+      {
+        value: "ghidra",
+        url:"http:\/\/www.kali.org\/tools\/ghidra\/"
+      },
+      
+      {
+        value: "iw",
+        url:"http:\/\/www.kali.org\/tools\/iw\/"
+      },
+      
+      {
+        value: "Kali Tools",
+        url:"http:\/\/www.kali.org\/docs\/tools\/kali-tools\/"
+      },
+      
+      {
+        value: "Kali\u0027s Domains",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/kali-domains\/"
+      },
+      
+      {
+        value: "Official Kali Linux Sites",
+        url:"http:\/\/www.kali.org\/docs\/community\/list-of-official-kali-sites\/"
+      },
+      
+      {
+        value: "protos-sip",
+        url:"http:\/\/www.kali.org\/tools\/protos-sip\/"
+      },
+      
+      {
+        value: "stegcracker",
+        url:"http:\/\/www.kali.org\/tools\/stegcracker\/"
+      },
+      
+      {
+        value: "stunnel4",
+        url:"http:\/\/www.kali.org\/tools\/stunnel4\/"
+      },
+      
+      {
+        value: "veil",
+        url:"http:\/\/www.kali.org\/tools\/veil\/"
+      },
+      
+      {
+        value: "Kali Linux 2021.3 Release (OpenSSL, Kali-Tools, Kali Live VM Support, Kali NetHunter Smartwatch)",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2021-3-release\/"
+      },
+      
+      {
+        value: "0trace",
+        url:"http:\/\/www.kali.org\/tools\/0trace\/"
+      },
+      
+      {
+        value: "aesfix",
+        url:"http:\/\/www.kali.org\/tools\/aesfix\/"
+      },
+      
+      {
+        value: "afflib",
+        url:"http:\/\/www.kali.org\/tools\/afflib\/"
+      },
+      
+      {
+        value: "aircrack-ng",
+        url:"http:\/\/www.kali.org\/tools\/aircrack-ng\/"
+      },
+      
+      {
+        value: "amap",
+        url:"http:\/\/www.kali.org\/tools\/amap\/"
+      },
+      
+      {
+        value: "arpwatch",
+        url:"http:\/\/www.kali.org\/tools\/arpwatch\/"
+      },
+      
+      {
+        value: "curlftpfs",
+        url:"http:\/\/www.kali.org\/tools\/curlftpfs\/"
+      },
+      
+      {
+        value: "cutycapt",
+        url:"http:\/\/www.kali.org\/tools\/cutycapt\/"
+      },
+      
+      {
+        value: "dnsmap",
+        url:"http:\/\/www.kali.org\/tools\/dnsmap\/"
+      },
+      
+      {
+        value: "edb-debugger",
+        url:"http:\/\/www.kali.org\/tools\/edb-debugger\/"
+      },
+      
+      {
+        value: "fake-hwclock",
+        url:"http:\/\/www.kali.org\/tools\/fake-hwclock\/"
+      },
+      
+      {
+        value: "freeradius",
+        url:"http:\/\/www.kali.org\/tools\/freeradius\/"
+      },
+      
+      {
+        value: "gdb",
+        url:"http:\/\/www.kali.org\/tools\/gdb\/"
+      },
+      
+      {
+        value: "gdisk",
+        url:"http:\/\/www.kali.org\/tools\/gdisk\/"
+      },
+      
+      {
+        value: "grokevt",
+        url:"http:\/\/www.kali.org\/tools\/grokevt\/"
+      },
+      
+      {
+        value: "guymager",
+        url:"http:\/\/www.kali.org\/tools\/guymager\/"
+      },
+      
+      {
+        value: "hackrf",
+        url:"http:\/\/www.kali.org\/tools\/hackrf\/"
+      },
+      
+      {
+        value: "heartleech",
+        url:"http:\/\/www.kali.org\/tools\/heartleech\/"
+      },
+      
+      {
+        value: "ipv6-toolkit",
+        url:"http:\/\/www.kali.org\/tools\/ipv6-toolkit\/"
+      },
+      
+      {
+        value: "legion",
+        url:"http:\/\/www.kali.org\/tools\/legion\/"
+      },
+      
+      {
+        value: "libnfc",
+        url:"http:\/\/www.kali.org\/tools\/libnfc\/"
+      },
+      
+      {
+        value: "mc",
+        url:"http:\/\/www.kali.org\/tools\/mc\/"
+      },
+      
+      {
+        value: "minicom",
+        url:"http:\/\/www.kali.org\/tools\/minicom\/"
+      },
+      
+      {
+        value: "miredo",
+        url:"http:\/\/www.kali.org\/tools\/miredo\/"
+      },
+      
+      {
+        value: "myrescue",
+        url:"http:\/\/www.kali.org\/tools\/myrescue\/"
+      },
+      
+      {
+        value: "nasm",
+        url:"http:\/\/www.kali.org\/tools\/nasm\/"
+      },
+      
+      {
+        value: "nasty",
+        url:"http:\/\/www.kali.org\/tools\/nasty\/"
+      },
+      
+      {
+        value: "netkit-tftp",
+        url:"http:\/\/www.kali.org\/tools\/netkit-tftp\/"
+      },
+      
+      {
+        value: "netw-ib-ox-ag",
+        url:"http:\/\/www.kali.org\/tools\/netw-ib-ox-ag\/"
+      },
+      
+      {
+        value: "nfs-utils",
+        url:"http:\/\/www.kali.org\/tools\/nfs-utils\/"
+      },
+      
+      {
+        value: "nmapsi4",
+        url:"http:\/\/www.kali.org\/tools\/nmapsi4\/"
+      },
+      
+      {
+        value: "openocd",
+        url:"http:\/\/www.kali.org\/tools\/openocd\/"
+      },
+      
+      {
+        value: "pack",
+        url:"http:\/\/www.kali.org\/tools\/pack\/"
+      },
+      
+      {
+        value: "radare2",
+        url:"http:\/\/www.kali.org\/tools\/radare2\/"
+      },
+      
+      {
+        value: "radare2-cutter",
+        url:"http:\/\/www.kali.org\/tools\/radare2-cutter\/"
+      },
+      
+      {
+        value: "recoverjpeg",
+        url:"http:\/\/www.kali.org\/tools\/recoverjpeg\/"
+      },
+      
+      {
+        value: "reglookup",
+        url:"http:\/\/www.kali.org\/tools\/reglookup\/"
+      },
+      
+      {
+        value: "rfdump",
+        url:"http:\/\/www.kali.org\/tools\/rfdump\/"
+      },
+      
+      {
+        value: "rifiuti2",
+        url:"http:\/\/www.kali.org\/tools\/rifiuti2\/"
+      },
+      
+      {
+        value: "rsakeyfind",
+        url:"http:\/\/www.kali.org\/tools\/rsakeyfind\/"
+      },
+      
+      {
+        value: "rtlsdr-scanner",
+        url:"http:\/\/www.kali.org\/tools\/rtlsdr-scanner\/"
+      },
+      
+      {
+        value: "sipvicious",
+        url:"http:\/\/www.kali.org\/tools\/sipvicious\/"
+      },
+      
+      {
+        value: "sleuthkit",
+        url:"http:\/\/www.kali.org\/tools\/sleuthkit\/"
+      },
+      
+      {
+        value: "sniffjoke",
+        url:"http:\/\/www.kali.org\/tools\/sniffjoke\/"
+      },
+      
+      {
+        value: "spectools",
+        url:"http:\/\/www.kali.org\/tools\/spectools\/"
+      },
+      
+      {
+        value: "sqlitebrowser",
+        url:"http:\/\/www.kali.org\/tools\/sqlitebrowser\/"
+      },
+      
+      {
+        value: "sudo",
+        url:"http:\/\/www.kali.org\/tools\/sudo\/"
+      },
+      
+      {
+        value: "thc-ipv6",
+        url:"http:\/\/www.kali.org\/tools\/thc-ipv6\/"
+      },
+      
+      {
+        value: "traceroute",
+        url:"http:\/\/www.kali.org\/tools\/traceroute\/"
+      },
+      
+      {
+        value: "unhide",
+        url:"http:\/\/www.kali.org\/tools\/unhide\/"
+      },
+      
+      {
+        value: "unhide.rb",
+        url:"http:\/\/www.kali.org\/tools\/unhide.rb\/"
+      },
+      
+      {
+        value: "vpnc",
+        url:"http:\/\/www.kali.org\/tools\/vpnc\/"
+      },
+      
+      {
+        value: "websploit",
+        url:"http:\/\/www.kali.org\/tools\/websploit\/"
+      },
+      
+      {
+        value: "abootimg",
+        url:"http:\/\/www.kali.org\/tools\/abootimg\/"
+      },
+      
+      {
+        value: "aeskeyfind",
+        url:"http:\/\/www.kali.org\/tools\/aeskeyfind\/"
+      },
+      
+      {
+        value: "airgeddon",
+        url:"http:\/\/www.kali.org\/tools\/airgeddon\/"
+      },
+      
+      {
+        value: "altdns",
+        url:"http:\/\/www.kali.org\/tools\/altdns\/"
+      },
+      
+      {
+        value: "apache-users",
+        url:"http:\/\/www.kali.org\/tools\/apache-users\/"
+      },
+      
+      {
+        value: "apktool",
+        url:"http:\/\/www.kali.org\/tools\/apktool\/"
+      },
+      
+      {
+        value: "arjun",
+        url:"http:\/\/www.kali.org\/tools\/arjun\/"
+      },
+      
+      {
+        value: "armitage",
+        url:"http:\/\/www.kali.org\/tools\/armitage\/"
+      },
+      
+      {
+        value: "arp-scan",
+        url:"http:\/\/www.kali.org\/tools\/arp-scan\/"
+      },
+      
+      {
+        value: "arping",
+        url:"http:\/\/www.kali.org\/tools\/arping\/"
+      },
+      
+      {
+        value: "assetfinder",
+        url:"http:\/\/www.kali.org\/tools\/assetfinder\/"
+      },
+      
+      {
+        value: "autopsy",
+        url:"http:\/\/www.kali.org\/tools\/autopsy\/"
+      },
+      
+      {
+        value: "axel",
+        url:"http:\/\/www.kali.org\/tools\/axel\/"
+      },
+      
+      {
+        value: "backdoor-factory",
+        url:"http:\/\/www.kali.org\/tools\/backdoor-factory\/"
+      },
+      
+      {
+        value: "bed",
+        url:"http:\/\/www.kali.org\/tools\/bed\/"
+      },
+      
+      {
+        value: "berate-ap",
+        url:"http:\/\/www.kali.org\/tools\/berate-ap\/"
+      },
+      
+      {
+        value: "bettercap",
+        url:"http:\/\/www.kali.org\/tools\/bettercap\/"
+      },
+      
+      {
+        value: "bloodhound",
+        url:"http:\/\/www.kali.org\/tools\/bloodhound\/"
+      },
+      
+      {
+        value: "bluelog",
+        url:"http:\/\/www.kali.org\/tools\/bluelog\/"
+      },
+      
+      {
+        value: "blueranger",
+        url:"http:\/\/www.kali.org\/tools\/blueranger\/"
+      },
+      
+      {
+        value: "bluesnarfer",
+        url:"http:\/\/www.kali.org\/tools\/bluesnarfer\/"
+      },
+      
+      {
+        value: "braa",
+        url:"http:\/\/www.kali.org\/tools\/braa\/"
+      },
+      
+      {
+        value: "bruteforce-salted-openssl",
+        url:"http:\/\/www.kali.org\/tools\/bruteforce-salted-openssl\/"
+      },
+      
+      {
+        value: "brutespray",
+        url:"http:\/\/www.kali.org\/tools\/brutespray\/"
+      },
+      
+      {
+        value: "btscanner",
+        url:"http:\/\/www.kali.org\/tools\/btscanner\/"
+      },
+      
+      {
+        value: "bully",
+        url:"http:\/\/www.kali.org\/tools\/bully\/"
+      },
+      
+      {
+        value: "burpsuite",
+        url:"http:\/\/www.kali.org\/tools\/burpsuite\/"
+      },
+      
+      {
+        value: "bytecode-viewer",
+        url:"http:\/\/www.kali.org\/tools\/bytecode-viewer\/"
+      },
+      
+      {
+        value: "cabextract",
+        url:"http:\/\/www.kali.org\/tools\/cabextract\/"
+      },
+      
+      {
+        value: "cadaver",
+        url:"http:\/\/www.kali.org\/tools\/cadaver\/"
+      },
+      
+      {
+        value: "caldera",
+        url:"http:\/\/www.kali.org\/tools\/caldera\/"
+      },
+      
+      {
+        value: "capstone",
+        url:"http:\/\/www.kali.org\/tools\/capstone\/"
+      },
+      
+      {
+        value: "ccrypt",
+        url:"http:\/\/www.kali.org\/tools\/ccrypt\/"
+      },
+      
+      {
+        value: "certgraph",
+        url:"http:\/\/www.kali.org\/tools\/certgraph\/"
+      },
+      
+      {
+        value: "cewl",
+        url:"http:\/\/www.kali.org\/tools\/cewl\/"
+      },
+      
+      {
+        value: "changeme",
+        url:"http:\/\/www.kali.org\/tools\/changeme\/"
+      },
+      
+      {
+        value: "chaosreader",
+        url:"http:\/\/www.kali.org\/tools\/chaosreader\/"
+      },
+      
+      {
+        value: "chirp",
+        url:"http:\/\/www.kali.org\/tools\/chirp\/"
+      },
+      
+      {
+        value: "chisel",
+        url:"http:\/\/www.kali.org\/tools\/chisel\/"
+      },
+      
+      {
+        value: "chntpw",
+        url:"http:\/\/www.kali.org\/tools\/chntpw\/"
+      },
+      
+      {
+        value: "cisco-auditing-tool",
+        url:"http:\/\/www.kali.org\/tools\/cisco-auditing-tool\/"
+      },
+      
+      {
+        value: "cisco-global-exploiter",
+        url:"http:\/\/www.kali.org\/tools\/cisco-global-exploiter\/"
+      },
+      
+      {
+        value: "cisco-ocs",
+        url:"http:\/\/www.kali.org\/tools\/cisco-ocs\/"
+      },
+      
+      {
+        value: "cisco-torch",
+        url:"http:\/\/www.kali.org\/tools\/cisco-torch\/"
+      },
+      
+      {
+        value: "cloud-enum",
+        url:"http:\/\/www.kali.org\/tools\/cloud-enum\/"
+      },
+      
+      {
+        value: "cloudbrute",
+        url:"http:\/\/www.kali.org\/tools\/cloudbrute\/"
+      },
+      
+      {
+        value: "cmospwd",
+        url:"http:\/\/www.kali.org\/tools\/cmospwd\/"
+      },
+      
+      {
+        value: "code-oss",
+        url:"http:\/\/www.kali.org\/tools\/code-oss\/"
+      },
+      
+      {
+        value: "command-not-found",
+        url:"http:\/\/www.kali.org\/tools\/command-not-found\/"
+      },
+      
+      {
+        value: "copy-router-config",
+        url:"http:\/\/www.kali.org\/tools\/copy-router-config\/"
+      },
+      
+      {
+        value: "covenant-kbx",
+        url:"http:\/\/www.kali.org\/tools\/covenant-kbx\/"
+      },
+      
+      {
+        value: "cowpatty",
+        url:"http:\/\/www.kali.org\/tools\/cowpatty\/"
+      },
+      
+      {
+        value: "crackle",
+        url:"http:\/\/www.kali.org\/tools\/crackle\/"
+      },
+      
+      {
+        value: "crowbar",
+        url:"http:\/\/www.kali.org\/tools\/crowbar\/"
+      },
+      
+      {
+        value: "crunch",
+        url:"http:\/\/www.kali.org\/tools\/crunch\/"
+      },
+      
+      {
+        value: "cryptcat",
+        url:"http:\/\/www.kali.org\/tools\/cryptcat\/"
+      },
+      
+      {
+        value: "cryptsetup-nuke-password",
+        url:"http:\/\/www.kali.org\/tools\/cryptsetup-nuke-password\/"
+      },
+      
+      {
+        value: "cutecom",
+        url:"http:\/\/www.kali.org\/tools\/cutecom\/"
+      },
+      
+      {
+        value: "cymothoa",
+        url:"http:\/\/www.kali.org\/tools\/cymothoa\/"
+      },
+      
+      {
+        value: "darkstat",
+        url:"http:\/\/www.kali.org\/tools\/darkstat\/"
+      },
+      
+      {
+        value: "davtest",
+        url:"http:\/\/www.kali.org\/tools\/davtest\/"
+      },
+      
+      {
+        value: "dbd",
+        url:"http:\/\/www.kali.org\/tools\/dbd\/"
+      },
+      
+      {
+        value: "dbeaver",
+        url:"http:\/\/www.kali.org\/tools\/dbeaver\/"
+      },
+      
+      {
+        value: "dcfldd",
+        url:"http:\/\/www.kali.org\/tools\/dcfldd\/"
+      },
+      
+      {
+        value: "ddrescue",
+        url:"http:\/\/www.kali.org\/tools\/ddrescue\/"
+      },
+      
+      {
+        value: "de4dot",
+        url:"http:\/\/www.kali.org\/tools\/de4dot\/"
+      },
+      
+      {
+        value: "dex2jar",
+        url:"http:\/\/www.kali.org\/tools\/dex2jar\/"
+      },
+      
+      {
+        value: "dfvfs",
+        url:"http:\/\/www.kali.org\/tools\/dfvfs\/"
+      },
+      
+      {
+        value: "dfwinreg",
+        url:"http:\/\/www.kali.org\/tools\/dfwinreg\/"
+      },
+      
+      {
+        value: "dhcpig",
+        url:"http:\/\/www.kali.org\/tools\/dhcpig\/"
+      },
+      
+      {
+        value: "dirb",
+        url:"http:\/\/www.kali.org\/tools\/dirb\/"
+      },
+      
+      {
+        value: "dirsearch",
+        url:"http:\/\/www.kali.org\/tools\/dirsearch\/"
+      },
+      
+      {
+        value: "distorm3",
+        url:"http:\/\/www.kali.org\/tools\/distorm3\/"
+      },
+      
+      {
+        value: "dmitry",
+        url:"http:\/\/www.kali.org\/tools\/dmitry\/"
+      },
+      
+      {
+        value: "dns2tcp",
+        url:"http:\/\/www.kali.org\/tools\/dns2tcp\/"
+      },
+      
+      {
+        value: "dnschef",
+        url:"http:\/\/www.kali.org\/tools\/dnschef\/"
+      },
+      
+      {
+        value: "dnsenum",
+        url:"http:\/\/www.kali.org\/tools\/dnsenum\/"
+      },
+      
+      {
+        value: "dnsgen",
+        url:"http:\/\/www.kali.org\/tools\/dnsgen\/"
+      },
+      
+      {
+        value: "dnsrecon",
+        url:"http:\/\/www.kali.org\/tools\/dnsrecon\/"
+      },
+      
+      {
+        value: "dnstwist",
+        url:"http:\/\/www.kali.org\/tools\/dnstwist\/"
+      },
+      
+      {
+        value: "dnswalk",
+        url:"http:\/\/www.kali.org\/tools\/dnswalk\/"
+      },
+      
+      {
+        value: "doona",
+        url:"http:\/\/www.kali.org\/tools\/doona\/"
+      },
+      
+      {
+        value: "dotdotpwn",
+        url:"http:\/\/www.kali.org\/tools\/dotdotpwn\/"
+      },
+      
+      {
+        value: "driftnet",
+        url:"http:\/\/www.kali.org\/tools\/driftnet\/"
+      },
+      
+      {
+        value: "dsniff",
+        url:"http:\/\/www.kali.org\/tools\/dsniff\/"
+      },
+      
+      {
+        value: "dumpsterdiver",
+        url:"http:\/\/www.kali.org\/tools\/dumpsterdiver\/"
+      },
+      
+      {
+        value: "dumpzilla",
+        url:"http:\/\/www.kali.org\/tools\/dumpzilla\/"
+      },
+      
+      {
+        value: "eaphammer",
+        url:"http:\/\/www.kali.org\/tools\/eaphammer\/"
+      },
+      
+      {
+        value: "eapmd5pass",
+        url:"http:\/\/www.kali.org\/tools\/eapmd5pass\/"
+      },
+      
+      {
+        value: "emailharvester",
+        url:"http:\/\/www.kali.org\/tools\/emailharvester\/"
+      },
+      
+      {
+        value: "enum4linux",
+        url:"http:\/\/www.kali.org\/tools\/enum4linux\/"
+      },
+      
+      {
+        value: "enumiax",
+        url:"http:\/\/www.kali.org\/tools\/enumiax\/"
+      },
+      
+      {
+        value: "ethtool",
+        url:"http:\/\/www.kali.org\/tools\/ethtool\/"
+      },
+      
+      {
+        value: "evil-ssdp",
+        url:"http:\/\/www.kali.org\/tools\/evil-ssdp\/"
+      },
+      
+      {
+        value: "exe2hexbat",
+        url:"http:\/\/www.kali.org\/tools\/exe2hexbat\/"
+      },
+      
+      {
+        value: "exifprobe",
+        url:"http:\/\/www.kali.org\/tools\/exifprobe\/"
+      },
+      
+      {
+        value: "exploitdb-bin-sploits",
+        url:"http:\/\/www.kali.org\/tools\/exploitdb-bin-sploits\/"
+      },
+      
+      {
+        value: "exploitdb-papers",
+        url:"http:\/\/www.kali.org\/tools\/exploitdb-papers\/"
+      },
+      
+      {
+        value: "ext3grep",
+        url:"http:\/\/www.kali.org\/tools\/ext3grep\/"
+      },
+      
+      {
+        value: "ext4magic",
+        url:"http:\/\/www.kali.org\/tools\/ext4magic\/"
+      },
+      
+      {
+        value: "extundelete",
+        url:"http:\/\/www.kali.org\/tools\/extundelete\/"
+      },
+      
+      {
+        value: "fcrackzip",
+        url:"http:\/\/www.kali.org\/tools\/fcrackzip\/"
+      },
+      
+      {
+        value: "fern-wifi-cracker",
+        url:"http:\/\/www.kali.org\/tools\/fern-wifi-cracker\/"
+      },
+      
+      {
+        value: "fierce",
+        url:"http:\/\/www.kali.org\/tools\/fierce\/"
+      },
+      
+      {
+        value: "fiked",
+        url:"http:\/\/www.kali.org\/tools\/fiked\/"
+      },
+      
+      {
+        value: "finalrecon",
+        url:"http:\/\/www.kali.org\/tools\/finalrecon\/"
+      },
+      
+      {
+        value: "firmware-mod-kit",
+        url:"http:\/\/www.kali.org\/tools\/firmware-mod-kit\/"
+      },
+      
+      {
+        value: "fping",
+        url:"http:\/\/www.kali.org\/tools\/fping\/"
+      },
+      
+      {
+        value: "fragrouter",
+        url:"http:\/\/www.kali.org\/tools\/fragrouter\/"
+      },
+      
+      {
+        value: "freeradius-wpe",
+        url:"http:\/\/www.kali.org\/tools\/freeradius-wpe\/"
+      },
+      
+      {
+        value: "ftester",
+        url:"http:\/\/www.kali.org\/tools\/ftester\/"
+      },
+      
+      {
+        value: "galleta",
+        url:"http:\/\/www.kali.org\/tools\/galleta\/"
+      },
+      
+      {
+        value: "getallurls",
+        url:"http:\/\/www.kali.org\/tools\/getallurls\/"
+      },
+      
+      {
+        value: "gitleaks",
+        url:"http:\/\/www.kali.org\/tools\/gitleaks\/"
+      },
+      
+      {
+        value: "gobuster",
+        url:"http:\/\/www.kali.org\/tools\/gobuster\/"
+      },
+      
+      {
+        value: "godoh",
+        url:"http:\/\/www.kali.org\/tools\/godoh\/"
+      },
+      
+      {
+        value: "golang-github-binject-go-donut",
+        url:"http:\/\/www.kali.org\/tools\/golang-github-binject-go-donut\/"
+      },
+      
+      {
+        value: "goldeneye",
+        url:"http:\/\/www.kali.org\/tools\/goldeneye\/"
+      },
+      
+      {
+        value: "goofile",
+        url:"http:\/\/www.kali.org\/tools\/goofile\/"
+      },
+      
+      {
+        value: "gospider",
+        url:"http:\/\/www.kali.org\/tools\/gospider\/"
+      },
+      
+      {
+        value: "gparted",
+        url:"http:\/\/www.kali.org\/tools\/gparted\/"
+      },
+      
+      {
+        value: "gpp-decrypt",
+        url:"http:\/\/www.kali.org\/tools\/gpp-decrypt\/"
+      },
+      
+      {
+        value: "gr-air-modes",
+        url:"http:\/\/www.kali.org\/tools\/gr-air-modes\/"
+      },
+      
+      {
+        value: "gr-iqbal",
+        url:"http:\/\/www.kali.org\/tools\/gr-iqbal\/"
+      },
+      
+      {
+        value: "hamster-sidejack",
+        url:"http:\/\/www.kali.org\/tools\/hamster-sidejack\/"
+      },
+      
+      {
+        value: "hash-identifier",
+        url:"http:\/\/www.kali.org\/tools\/hash-identifier\/"
+      },
+      
+      {
+        value: "hashcat",
+        url:"http:\/\/www.kali.org\/tools\/hashcat\/"
+      },
+      
+      {
+        value: "hashcat-utils",
+        url:"http:\/\/www.kali.org\/tools\/hashcat-utils\/"
+      },
+      
+      {
+        value: "hashid",
+        url:"http:\/\/www.kali.org\/tools\/hashid\/"
+      },
+      
+      {
+        value: "hashrat",
+        url:"http:\/\/www.kali.org\/tools\/hashrat\/"
+      },
+      
+      {
+        value: "hb-honeypot",
+        url:"http:\/\/www.kali.org\/tools\/hb-honeypot\/"
+      },
+      
+      {
+        value: "hcxtools",
+        url:"http:\/\/www.kali.org\/tools\/hcxtools\/"
+      },
+      
+      {
+        value: "hexinject",
+        url:"http:\/\/www.kali.org\/tools\/hexinject\/"
+      },
+      
+      {
+        value: "hostapd-mana",
+        url:"http:\/\/www.kali.org\/tools\/hostapd-mana\/"
+      },
+      
+      {
+        value: "hostapd-wpe",
+        url:"http:\/\/www.kali.org\/tools\/hostapd-wpe\/"
+      },
+      
+      {
+        value: "hosthunter",
+        url:"http:\/\/www.kali.org\/tools\/hosthunter\/"
+      },
+      
+      {
+        value: "hotpatch",
+        url:"http:\/\/www.kali.org\/tools\/hotpatch\/"
+      },
+      
+      {
+        value: "hping3",
+        url:"http:\/\/www.kali.org\/tools\/hping3\/"
+      },
+      
+      {
+        value: "httprint",
+        url:"http:\/\/www.kali.org\/tools\/httprint\/"
+      },
+      
+      {
+        value: "httprobe",
+        url:"http:\/\/www.kali.org\/tools\/httprobe\/"
+      },
+      
+      {
+        value: "hurl",
+        url:"http:\/\/www.kali.org\/tools\/hurl\/"
+      },
+      
+      {
+        value: "hydra",
+        url:"http:\/\/www.kali.org\/tools\/hydra\/"
+      },
+      
+      {
+        value: "hyperion",
+        url:"http:\/\/www.kali.org\/tools\/hyperion\/"
+      },
+      
+      {
+        value: "i2c-tools",
+        url:"http:\/\/www.kali.org\/tools\/i2c-tools\/"
+      },
+      
+      {
+        value: "iaxflood",
+        url:"http:\/\/www.kali.org\/tools\/iaxflood\/"
+      },
+      
+      {
+        value: "ibombshell",
+        url:"http:\/\/www.kali.org\/tools\/ibombshell\/"
+      },
+      
+      {
+        value: "ident-user-enum",
+        url:"http:\/\/www.kali.org\/tools\/ident-user-enum\/"
+      },
+      
+      {
+        value: "inetsim",
+        url:"http:\/\/www.kali.org\/tools\/inetsim\/"
+      },
+      
+      {
+        value: "inspectrum",
+        url:"http:\/\/www.kali.org\/tools\/inspectrum\/"
+      },
+      
+      {
+        value: "inspy",
+        url:"http:\/\/www.kali.org\/tools\/inspy\/"
+      },
+      
+      {
+        value: "instaloader",
+        url:"http:\/\/www.kali.org\/tools\/instaloader\/"
+      },
+      
+      {
+        value: "inviteflood",
+        url:"http:\/\/www.kali.org\/tools\/inviteflood\/"
+      },
+      
+      {
+        value: "iodine",
+        url:"http:\/\/www.kali.org\/tools\/iodine\/"
+      },
+      
+      {
+        value: "ismtp",
+        url:"http:\/\/www.kali.org\/tools\/ismtp\/"
+      },
+      
+      {
+        value: "javasnoop",
+        url:"http:\/\/www.kali.org\/tools\/javasnoop\/"
+      },
+      
+      {
+        value: "jboss-autopwn",
+        url:"http:\/\/www.kali.org\/tools\/jboss-autopwn\/"
+      },
+      
+      {
+        value: "jd-gui",
+        url:"http:\/\/www.kali.org\/tools\/jd-gui\/"
+      },
+      
+      {
+        value: "johnny",
+        url:"http:\/\/www.kali.org\/tools\/johnny\/"
+      },
+      
+      {
+        value: "joomscan",
+        url:"http:\/\/www.kali.org\/tools\/joomscan\/"
+      },
+      
+      {
+        value: "joplin",
+        url:"http:\/\/www.kali.org\/tools\/joplin\/"
+      },
+      
+      {
+        value: "kali-community-wallpapers",
+        url:"http:\/\/www.kali.org\/tools\/kali-community-wallpapers\/"
+      },
+      
+      {
+        value: "kali-wallpapers",
+        url:"http:\/\/www.kali.org\/tools\/kali-wallpapers\/"
+      },
+      
+      {
+        value: "kalibrate-rtl",
+        url:"http:\/\/www.kali.org\/tools\/kalibrate-rtl\/"
+      },
+      
+      {
+        value: "kismet",
+        url:"http:\/\/www.kali.org\/tools\/kismet\/"
+      },
+      
+      {
+        value: "knocker",
+        url:"http:\/\/www.kali.org\/tools\/knocker\/"
+      },
+      
+      {
+        value: "koadic",
+        url:"http:\/\/www.kali.org\/tools\/koadic\/"
+      },
+      
+      {
+        value: "lbd",
+        url:"http:\/\/www.kali.org\/tools\/lbd\/"
+      },
+      
+      {
+        value: "libewf",
+        url:"http:\/\/www.kali.org\/tools\/libewf\/"
+      },
+      
+      {
+        value: "libfindrtp",
+        url:"http:\/\/www.kali.org\/tools\/libfindrtp\/"
+      },
+      
+      {
+        value: "libfreefare",
+        url:"http:\/\/www.kali.org\/tools\/libfreefare\/"
+      },
+      
+      {
+        value: "libpst",
+        url:"http:\/\/www.kali.org\/tools\/libpst\/"
+      },
+      
+      {
+        value: "linux-exploit-suggester",
+        url:"http:\/\/www.kali.org\/tools\/linux-exploit-suggester\/"
+      },
+      
+      {
+        value: "lvm2",
+        url:"http:\/\/www.kali.org\/tools\/lvm2\/"
+      },
+      
+      {
+        value: "lynis",
+        url:"http:\/\/www.kali.org\/tools\/lynis\/"
+      },
+      
+      {
+        value: "mac-robber",
+        url:"http:\/\/www.kali.org\/tools\/mac-robber\/"
+      },
+      
+      {
+        value: "macchanger",
+        url:"http:\/\/www.kali.org\/tools\/macchanger\/"
+      },
+      
+      {
+        value: "magicrescue",
+        url:"http:\/\/www.kali.org\/tools\/magicrescue\/"
+      },
+      
+      {
+        value: "masscan",
+        url:"http:\/\/www.kali.org\/tools\/masscan\/"
+      },
+      
+      {
+        value: "massdns",
+        url:"http:\/\/www.kali.org\/tools\/massdns\/"
+      },
+      
+      {
+        value: "medusa",
+        url:"http:\/\/www.kali.org\/tools\/medusa\/"
+      },
+      
+      {
+        value: "memdump",
+        url:"http:\/\/www.kali.org\/tools\/memdump\/"
+      },
+      
+      {
+        value: "metacam",
+        url:"http:\/\/www.kali.org\/tools\/metacam\/"
+      },
+      
+      {
+        value: "metagoofil",
+        url:"http:\/\/www.kali.org\/tools\/metagoofil\/"
+      },
+      
+      {
+        value: "mfcuk",
+        url:"http:\/\/www.kali.org\/tools\/mfcuk\/"
+      },
+      
+      {
+        value: "mfoc",
+        url:"http:\/\/www.kali.org\/tools\/mfoc\/"
+      },
+      
+      {
+        value: "mfterm",
+        url:"http:\/\/www.kali.org\/tools\/mfterm\/"
+      },
+      
+      {
+        value: "mimikatz",
+        url:"http:\/\/www.kali.org\/tools\/mimikatz\/"
+      },
+      
+      {
+        value: "missidentify",
+        url:"http:\/\/www.kali.org\/tools\/missidentify\/"
+      },
+      
+      {
+        value: "mitmproxy",
+        url:"http:\/\/www.kali.org\/tools\/mitmproxy\/"
+      },
+      
+      {
+        value: "msfpc",
+        url:"http:\/\/www.kali.org\/tools\/msfpc\/"
+      },
+      
+      {
+        value: "multimac",
+        url:"http:\/\/www.kali.org\/tools\/multimac\/"
+      },
+      
+      {
+        value: "multimon-ng",
+        url:"http:\/\/www.kali.org\/tools\/multimon-ng\/"
+      },
+      
+      {
+        value: "mysql-defaults",
+        url:"http:\/\/www.kali.org\/tools\/mysql-defaults\/"
+      },
+      
+      {
+        value: "nbtscan",
+        url:"http:\/\/www.kali.org\/tools\/nbtscan\/"
+      },
+      
+      {
+        value: "nbtscan-unixwiz",
+        url:"http:\/\/www.kali.org\/tools\/nbtscan-unixwiz\/"
+      },
+      
+      {
+        value: "ncrack",
+        url:"http:\/\/www.kali.org\/tools\/ncrack\/"
+      },
+      
+      {
+        value: "ncurses-hexedit",
+        url:"http:\/\/www.kali.org\/tools\/ncurses-hexedit\/"
+      },
+      
+      {
+        value: "netcat",
+        url:"http:\/\/www.kali.org\/tools\/netcat\/"
+      },
+      
+      {
+        value: "netkit-telnet",
+        url:"http:\/\/www.kali.org\/tools\/netkit-telnet\/"
+      },
+      
+      {
+        value: "netmask",
+        url:"http:\/\/www.kali.org\/tools\/netmask\/"
+      },
+      
+      {
+        value: "netsed",
+        url:"http:\/\/www.kali.org\/tools\/netsed\/"
+      },
+      
+      {
+        value: "nextnet",
+        url:"http:\/\/www.kali.org\/tools\/nextnet\/"
+      },
+      
+      {
+        value: "nikto",
+        url:"http:\/\/www.kali.org\/tools\/nikto\/"
+      },
+      
+      {
+        value: "nipper-ng",
+        url:"http:\/\/www.kali.org\/tools\/nipper-ng\/"
+      },
+      
+      {
+        value: "o-saft",
+        url:"http:\/\/www.kali.org\/tools\/o-saft\/"
+      },
+      
+      {
+        value: "oclgausscrack",
+        url:"http:\/\/www.kali.org\/tools\/oclgausscrack\/"
+      },
+      
+      {
+        value: "odat",
+        url:"http:\/\/www.kali.org\/tools\/odat\/"
+      },
+      
+      {
+        value: "offsec-courses",
+        url:"http:\/\/www.kali.org\/tools\/offsec-courses\/"
+      },
+      
+      {
+        value: "ollydbg",
+        url:"http:\/\/www.kali.org\/tools\/ollydbg\/"
+      },
+      
+      {
+        value: "onesixtyone",
+        url:"http:\/\/www.kali.org\/tools\/onesixtyone\/"
+      },
+      
+      {
+        value: "openvpn",
+        url:"http:\/\/www.kali.org\/tools\/openvpn\/"
+      },
+      
+      {
+        value: "oscanner",
+        url:"http:\/\/www.kali.org\/tools\/oscanner\/"
+      },
+      
+      {
+        value: "osrframework",
+        url:"http:\/\/www.kali.org\/tools\/osrframework\/"
+      },
+      
+      {
+        value: "outguess",
+        url:"http:\/\/www.kali.org\/tools\/outguess\/"
+      },
+      
+      {
+        value: "owasp-mantra-ff",
+        url:"http:\/\/www.kali.org\/tools\/owasp-mantra-ff\/"
+      },
+      
+      {
+        value: "owl",
+        url:"http:\/\/www.kali.org\/tools\/owl\/"
+      },
+      
+      {
+        value: "p0f",
+        url:"http:\/\/www.kali.org\/tools\/p0f\/"
+      },
+      
+      {
+        value: "pacu",
+        url:"http:\/\/www.kali.org\/tools\/pacu\/"
+      },
+      
+      {
+        value: "padbuster",
+        url:"http:\/\/www.kali.org\/tools\/padbuster\/"
+      },
+      
+      {
+        value: "paros",
+        url:"http:\/\/www.kali.org\/tools\/paros\/"
+      },
+      
+      {
+        value: "parsero",
+        url:"http:\/\/www.kali.org\/tools\/parsero\/"
+      },
+      
+      {
+        value: "parted",
+        url:"http:\/\/www.kali.org\/tools\/parted\/"
+      },
+      
+      {
+        value: "pasco",
+        url:"http:\/\/www.kali.org\/tools\/pasco\/"
+      },
+      
+      {
+        value: "passing-the-hash",
+        url:"http:\/\/www.kali.org\/tools\/passing-the-hash\/"
+      },
+      
+      {
+        value: "payloadsallthethings",
+        url:"http:\/\/www.kali.org\/tools\/payloadsallthethings\/"
+      },
+      
+      {
+        value: "pdfcrack",
+        url:"http:\/\/www.kali.org\/tools\/pdfcrack\/"
+      },
+      
+      {
+        value: "pdfid",
+        url:"http:\/\/www.kali.org\/tools\/pdfid\/"
+      },
+      
+      {
+        value: "peirates",
+        url:"http:\/\/www.kali.org\/tools\/peirates\/"
+      },
+      
+      {
+        value: "perl-cisco-copyconfig",
+        url:"http:\/\/www.kali.org\/tools\/perl-cisco-copyconfig\/"
+      },
+      
+      {
+        value: "phishery",
+        url:"http:\/\/www.kali.org\/tools\/phishery\/"
+      },
+      
+      {
+        value: "photon",
+        url:"http:\/\/www.kali.org\/tools\/photon\/"
+      },
+      
+      {
+        value: "phpggc",
+        url:"http:\/\/www.kali.org\/tools\/phpggc\/"
+      },
+      
+      {
+        value: "pipal",
+        url:"http:\/\/www.kali.org\/tools\/pipal\/"
+      },
+      
+      {
+        value: "pixiewps",
+        url:"http:\/\/www.kali.org\/tools\/pixiewps\/"
+      },
+      
+      {
+        value: "plaso",
+        url:"http:\/\/www.kali.org\/tools\/plaso\/"
+      },
+      
+      {
+        value: "plecost",
+        url:"http:\/\/www.kali.org\/tools\/plecost\/"
+      },
+      
+      {
+        value: "pnscan",
+        url:"http:\/\/www.kali.org\/tools\/pnscan\/"
+      },
+      
+      {
+        value: "polenum",
+        url:"http:\/\/www.kali.org\/tools\/polenum\/"
+      },
+      
+      {
+        value: "pompem",
+        url:"http:\/\/www.kali.org\/tools\/pompem\/"
+      },
+      
+      {
+        value: "powercat",
+        url:"http:\/\/www.kali.org\/tools\/powercat\/"
+      },
+      
+      {
+        value: "powersploit",
+        url:"http:\/\/www.kali.org\/tools\/powersploit\/"
+      },
+      
+      {
+        value: "proxytunnel",
+        url:"http:\/\/www.kali.org\/tools\/proxytunnel\/"
+      },
+      
+      {
+        value: "pskracker",
+        url:"http:\/\/www.kali.org\/tools\/pskracker\/"
+      },
+      
+      {
+        value: "ptunnel",
+        url:"http:\/\/www.kali.org\/tools\/ptunnel\/"
+      },
+      
+      {
+        value: "pwnat",
+        url:"http:\/\/www.kali.org\/tools\/pwnat\/"
+      },
+      
+      {
+        value: "pwncat",
+        url:"http:\/\/www.kali.org\/tools\/pwncat\/"
+      },
+      
+      {
+        value: "python-defaults",
+        url:"http:\/\/www.kali.org\/tools\/python-defaults\/"
+      },
+      
+      {
+        value: "qsslcaudit",
+        url:"http:\/\/www.kali.org\/tools\/qsslcaudit\/"
+      },
+      
+      {
+        value: "quark-engine",
+        url:"http:\/\/www.kali.org\/tools\/quark-engine\/"
+      },
+      
+      {
+        value: "rainbowcrack",
+        url:"http:\/\/www.kali.org\/tools\/rainbowcrack\/"
+      },
+      
+      {
+        value: "rake",
+        url:"http:\/\/www.kali.org\/tools\/rake\/"
+      },
+      
+      {
+        value: "rarcrack",
+        url:"http:\/\/www.kali.org\/tools\/rarcrack\/"
+      },
+      
+      {
+        value: "rcracki-mt",
+        url:"http:\/\/www.kali.org\/tools\/rcracki-mt\/"
+      },
+      
+      {
+        value: "rdesktop",
+        url:"http:\/\/www.kali.org\/tools\/rdesktop\/"
+      },
+      
+      {
+        value: "reaver",
+        url:"http:\/\/www.kali.org\/tools\/reaver\/"
+      },
+      
+      {
+        value: "rebind",
+        url:"http:\/\/www.kali.org\/tools\/rebind\/"
+      },
+      
+      {
+        value: "recon-ng",
+        url:"http:\/\/www.kali.org\/tools\/recon-ng\/"
+      },
+      
+      {
+        value: "recordmydesktop",
+        url:"http:\/\/www.kali.org\/tools\/recordmydesktop\/"
+      },
+      
+      {
+        value: "redfang",
+        url:"http:\/\/www.kali.org\/tools\/redfang\/"
+      },
+      
+      {
+        value: "redsnarf",
+        url:"http:\/\/www.kali.org\/tools\/redsnarf\/"
+      },
+      
+      {
+        value: "redsocks",
+        url:"http:\/\/www.kali.org\/tools\/redsocks\/"
+      },
+      
+      {
+        value: "regripper",
+        url:"http:\/\/www.kali.org\/tools\/regripper\/"
+      },
+      
+      {
+        value: "rephrase",
+        url:"http:\/\/www.kali.org\/tools\/rephrase\/"
+      },
+      
+      {
+        value: "requests",
+        url:"http:\/\/www.kali.org\/tools\/requests\/"
+      },
+      
+      {
+        value: "rfcat",
+        url:"http:\/\/www.kali.org\/tools\/rfcat\/"
+      },
+      
+      {
+        value: "ridenum",
+        url:"http:\/\/www.kali.org\/tools\/ridenum\/"
+      },
+      
+      {
+        value: "rifiuti",
+        url:"http:\/\/www.kali.org\/tools\/rifiuti\/"
+      },
+      
+      {
+        value: "rkhunter",
+        url:"http:\/\/www.kali.org\/tools\/rkhunter\/"
+      },
+      
+      {
+        value: "robotstxt",
+        url:"http:\/\/www.kali.org\/tools\/robotstxt\/"
+      },
+      
+      {
+        value: "ropper",
+        url:"http:\/\/www.kali.org\/tools\/ropper\/"
+      },
+      
+      {
+        value: "routerkeygenpc",
+        url:"http:\/\/www.kali.org\/tools\/routerkeygenpc\/"
+      },
+      
+      {
+        value: "routersploit",
+        url:"http:\/\/www.kali.org\/tools\/routersploit\/"
+      },
+      
+      {
+        value: "rsmangler",
+        url:"http:\/\/www.kali.org\/tools\/rsmangler\/"
+      },
+      
+      {
+        value: "rtpbreak",
+        url:"http:\/\/www.kali.org\/tools\/rtpbreak\/"
+      },
+      
+      {
+        value: "rtpflood",
+        url:"http:\/\/www.kali.org\/tools\/rtpflood\/"
+      },
+      
+      {
+        value: "rtpinsertsound",
+        url:"http:\/\/www.kali.org\/tools\/rtpinsertsound\/"
+      },
+      
+      {
+        value: "rtpmixsound",
+        url:"http:\/\/www.kali.org\/tools\/rtpmixsound\/"
+      },
+      
+      {
+        value: "safecopy",
+        url:"http:\/\/www.kali.org\/tools\/safecopy\/"
+      },
+      
+      {
+        value: "sakis3g",
+        url:"http:\/\/www.kali.org\/tools\/sakis3g\/"
+      },
+      
+      {
+        value: "samdump2",
+        url:"http:\/\/www.kali.org\/tools\/samdump2\/"
+      },
+      
+      {
+        value: "sbd",
+        url:"http:\/\/www.kali.org\/tools\/sbd\/"
+      },
+      
+      {
+        value: "scalpel",
+        url:"http:\/\/www.kali.org\/tools\/scalpel\/"
+      },
+      
+      {
+        value: "scapy",
+        url:"http:\/\/www.kali.org\/tools\/scapy\/"
+      },
+      
+      {
+        value: "screen",
+        url:"http:\/\/www.kali.org\/tools\/screen\/"
+      },
+      
+      {
+        value: "scrounge-ntfs",
+        url:"http:\/\/www.kali.org\/tools\/scrounge-ntfs\/"
+      },
+      
+      {
+        value: "sctpscan",
+        url:"http:\/\/www.kali.org\/tools\/sctpscan\/"
+      },
+      
+      {
+        value: "seclists",
+        url:"http:\/\/www.kali.org\/tools\/seclists\/"
+      },
+      
+      {
+        value: "secure-socket-funneling",
+        url:"http:\/\/www.kali.org\/tools\/secure-socket-funneling\/"
+      },
+      
+      {
+        value: "sendemail",
+        url:"http:\/\/www.kali.org\/tools\/sendemail\/"
+      },
+      
+      {
+        value: "shed",
+        url:"http:\/\/www.kali.org\/tools\/shed\/"
+      },
+      
+      {
+        value: "shellnoob",
+        url:"http:\/\/www.kali.org\/tools\/shellnoob\/"
+      },
+      
+      {
+        value: "sherlock",
+        url:"http:\/\/www.kali.org\/tools\/sherlock\/"
+      },
+      
+      {
+        value: "sidguesser",
+        url:"http:\/\/www.kali.org\/tools\/sidguesser\/"
+      },
+      
+      {
+        value: "siege",
+        url:"http:\/\/www.kali.org\/tools\/siege\/"
+      },
+      
+      {
+        value: "silenttrinity",
+        url:"http:\/\/www.kali.org\/tools\/silenttrinity\/"
+      },
+      
+      {
+        value: "siparmyknife",
+        url:"http:\/\/www.kali.org\/tools\/siparmyknife\/"
+      },
+      
+      {
+        value: "sipcrack",
+        url:"http:\/\/www.kali.org\/tools\/sipcrack\/"
+      },
+      
+      {
+        value: "sipp",
+        url:"http:\/\/www.kali.org\/tools\/sipp\/"
+      },
+      
+      {
+        value: "sipsak",
+        url:"http:\/\/www.kali.org\/tools\/sipsak\/"
+      },
+      
+      {
+        value: "skipfish",
+        url:"http:\/\/www.kali.org\/tools\/skipfish\/"
+      },
+      
+      {
+        value: "sliver",
+        url:"http:\/\/www.kali.org\/tools\/sliver\/"
+      },
+      
+      {
+        value: "slowhttptest",
+        url:"http:\/\/www.kali.org\/tools\/slowhttptest\/"
+      },
+      
+      {
+        value: "smali",
+        url:"http:\/\/www.kali.org\/tools\/smali\/"
+      },
+      
+      {
+        value: "smbmap",
+        url:"http:\/\/www.kali.org\/tools\/smbmap\/"
+      },
+      
+      {
+        value: "smtp-user-enum",
+        url:"http:\/\/www.kali.org\/tools\/smtp-user-enum\/"
+      },
+      
+      {
+        value: "snmpcheck",
+        url:"http:\/\/www.kali.org\/tools\/snmpcheck\/"
+      },
+      
+      {
+        value: "snmpenum",
+        url:"http:\/\/www.kali.org\/tools\/snmpenum\/"
+      },
+      
+      {
+        value: "snowdrop",
+        url:"http:\/\/www.kali.org\/tools\/snowdrop\/"
+      },
+      
+      {
+        value: "socat",
+        url:"http:\/\/www.kali.org\/tools\/socat\/"
+      },
+      
+      {
+        value: "spike",
+        url:"http:\/\/www.kali.org\/tools\/spike\/"
+      },
+      
+      {
+        value: "spooftooph",
+        url:"http:\/\/www.kali.org\/tools\/spooftooph\/"
+      },
+      
+      {
+        value: "sqldict",
+        url:"http:\/\/www.kali.org\/tools\/sqldict\/"
+      },
+      
+      {
+        value: "sqlninja",
+        url:"http:\/\/www.kali.org\/tools\/sqlninja\/"
+      },
+      
+      {
+        value: "sqlsus",
+        url:"http:\/\/www.kali.org\/tools\/sqlsus\/"
+      },
+      
+      {
+        value: "ssdeep",
+        url:"http:\/\/www.kali.org\/tools\/ssdeep\/"
+      },
+      
+      {
+        value: "ssldump",
+        url:"http:\/\/www.kali.org\/tools\/ssldump\/"
+      },
+      
+      {
+        value: "sslh",
+        url:"http:\/\/www.kali.org\/tools\/sslh\/"
+      },
+      
+      {
+        value: "sslscan",
+        url:"http:\/\/www.kali.org\/tools\/sslscan\/"
+      },
+      
+      {
+        value: "sslsniff",
+        url:"http:\/\/www.kali.org\/tools\/sslsniff\/"
+      },
+      
+      {
+        value: "sslsplit",
+        url:"http:\/\/www.kali.org\/tools\/sslsplit\/"
+      },
+      
+      {
+        value: "starkiller",
+        url:"http:\/\/www.kali.org\/tools\/starkiller\/"
+      },
+      
+      {
+        value: "steghide",
+        url:"http:\/\/www.kali.org\/tools\/steghide\/"
+      },
+      
+      {
+        value: "stegsnow",
+        url:"http:\/\/www.kali.org\/tools\/stegsnow\/"
+      },
+      
+      {
+        value: "subfinder",
+        url:"http:\/\/www.kali.org\/tools\/subfinder\/"
+      },
+      
+      {
+        value: "subjack",
+        url:"http:\/\/www.kali.org\/tools\/subjack\/"
+      },
+      
+      {
+        value: "sublist3r",
+        url:"http:\/\/www.kali.org\/tools\/sublist3r\/"
+      },
+      
+      {
+        value: "sucrack",
+        url:"http:\/\/www.kali.org\/tools\/sucrack\/"
+      },
+      
+      {
+        value: "swaks",
+        url:"http:\/\/www.kali.org\/tools\/swaks\/"
+      },
+      
+      {
+        value: "t50",
+        url:"http:\/\/www.kali.org\/tools\/t50\/"
+      },
+      
+      {
+        value: "tcpick",
+        url:"http:\/\/www.kali.org\/tools\/tcpick\/"
+      },
+      
+      {
+        value: "tcpreplay",
+        url:"http:\/\/www.kali.org\/tools\/tcpreplay\/"
+      },
+      
+      {
+        value: "termineter",
+        url:"http:\/\/www.kali.org\/tools\/termineter\/"
+      },
+      
+      {
+        value: "testdisk",
+        url:"http:\/\/www.kali.org\/tools\/testdisk\/"
+      },
+      
+      {
+        value: "tftpd32",
+        url:"http:\/\/www.kali.org\/tools\/tftpd32\/"
+      },
+      
+      {
+        value: "tnscmd10g",
+        url:"http:\/\/www.kali.org\/tools\/tnscmd10g\/"
+      },
+      
+      {
+        value: "truecrack",
+        url:"http:\/\/www.kali.org\/tools\/truecrack\/"
+      },
+      
+      {
+        value: "tundeep",
+        url:"http:\/\/www.kali.org\/tools\/tundeep\/"
+      },
+      
+      {
+        value: "twofi",
+        url:"http:\/\/www.kali.org\/tools\/twofi\/"
+      },
+      
+      {
+        value: "ubertooth",
+        url:"http:\/\/www.kali.org\/tools\/ubertooth\/"
+      },
+      
+      {
+        value: "uhd-images",
+        url:"http:\/\/www.kali.org\/tools\/uhd-images\/"
+      },
+      
+      {
+        value: "undbx",
+        url:"http:\/\/www.kali.org\/tools\/undbx\/"
+      },
+      
+      {
+        value: "unicornscan",
+        url:"http:\/\/www.kali.org\/tools\/unicornscan\/"
+      },
+      
+      {
+        value: "uniscan",
+        url:"http:\/\/www.kali.org\/tools\/uniscan\/"
+      },
+      
+      {
+        value: "unix-privesc-check",
+        url:"http:\/\/www.kali.org\/tools\/unix-privesc-check\/"
+      },
+      
+      {
+        value: "vboot-utils",
+        url:"http:\/\/www.kali.org\/tools\/vboot-utils\/"
+      },
+      
+      {
+        value: "vinetto",
+        url:"http:\/\/www.kali.org\/tools\/vinetto\/"
+      },
+      
+      {
+        value: "vlan",
+        url:"http:\/\/www.kali.org\/tools\/vlan\/"
+      },
+      
+      {
+        value: "voiphopper",
+        url:"http:\/\/www.kali.org\/tools\/voiphopper\/"
+      },
+      
+      {
+        value: "wafw00f",
+        url:"http:\/\/www.kali.org\/tools\/wafw00f\/"
+      },
+      
+      {
+        value: "wce",
+        url:"http:\/\/www.kali.org\/tools\/wce\/"
+      },
+      
+      {
+        value: "webacoo",
+        url:"http:\/\/www.kali.org\/tools\/webacoo\/"
+      },
+      
+      {
+        value: "webscarab",
+        url:"http:\/\/www.kali.org\/tools\/webscarab\/"
+      },
+      
+      {
+        value: "webshells",
+        url:"http:\/\/www.kali.org\/tools\/webshells\/"
+      },
+      
+      {
+        value: "weevely",
+        url:"http:\/\/www.kali.org\/tools\/weevely\/"
+      },
+      
+      {
+        value: "wfuzz",
+        url:"http:\/\/www.kali.org\/tools\/wfuzz\/"
+      },
+      
+      {
+        value: "wgetpaste",
+        url:"http:\/\/www.kali.org\/tools\/wgetpaste\/"
+      },
+      
+      {
+        value: "whatweb",
+        url:"http:\/\/www.kali.org\/tools\/whatweb\/"
+      },
+      
+      {
+        value: "whois",
+        url:"http:\/\/www.kali.org\/tools\/whois\/"
+      },
+      
+      {
+        value: "wifiphisher",
+        url:"http:\/\/www.kali.org\/tools\/wifiphisher\/"
+      },
+      
+      {
+        value: "wifite",
+        url:"http:\/\/www.kali.org\/tools\/wifite\/"
+      },
+      
+      {
+        value: "wig",
+        url:"http:\/\/www.kali.org\/tools\/wig\/"
+      },
+      
+      {
+        value: "wig-ng",
+        url:"http:\/\/www.kali.org\/tools\/wig-ng\/"
+      },
+      
+      {
+        value: "windows-binaries",
+        url:"http:\/\/www.kali.org\/tools\/windows-binaries\/"
+      },
+      
+      {
+        value: "windows-privesc-check",
+        url:"http:\/\/www.kali.org\/tools\/windows-privesc-check\/"
+      },
+      
+      {
+        value: "winregfs",
+        url:"http:\/\/www.kali.org\/tools\/winregfs\/"
+      },
+      
+      {
+        value: "witnessme",
+        url:"http:\/\/www.kali.org\/tools\/witnessme\/"
+      },
+      
+      {
+        value: "wordlistraider",
+        url:"http:\/\/www.kali.org\/tools\/wordlistraider\/"
+      },
+      
+      {
+        value: "wpa-sycophant",
+        url:"http:\/\/www.kali.org\/tools\/wpa-sycophant\/"
+      },
+      
+      {
+        value: "wpscan",
+        url:"http:\/\/www.kali.org\/tools\/wpscan\/"
+      },
+      
+      {
+        value: "xprobe",
+        url:"http:\/\/www.kali.org\/tools\/xprobe\/"
+      },
+      
+      {
+        value: "xspy",
+        url:"http:\/\/www.kali.org\/tools\/xspy\/"
+      },
+      
+      {
+        value: "xsser",
+        url:"http:\/\/www.kali.org\/tools\/xsser\/"
+      },
+      
+      {
+        value: "zerofree",
+        url:"http:\/\/www.kali.org\/tools\/zerofree\/"
+      },
+      
+      {
+        value: "zonedb",
+        url:"http:\/\/www.kali.org\/tools\/zonedb\/"
+      },
+      
+      {
+        value: "zsh-autosuggestions",
+        url:"http:\/\/www.kali.org\/tools\/zsh-autosuggestions\/"
+      },
+      
+      {
+        value: "zsh-syntax-highlighting",
+        url:"http:\/\/www.kali.org\/tools\/zsh-syntax-highlighting\/"
+      },
+      
+      {
+        value: "Kali Docs",
+        url:"http:\/\/www.kali.org\/docs\/"
+      },
+      
+      {
+        value: "Using Kali Linux Docker Images",
+        url:"http:\/\/www.kali.org\/docs\/containers\/using-kali-docker-images\/"
+      },
+      
+      {
+        value: "NetHunter Rootless",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-rootless\/"
+      },
+      
+      {
+        value: "Win-KeX",
+        url:"http:\/\/www.kali.org\/docs\/wsl\/win-kex\/"
+      },
+      
+      {
+        value: "AWS",
+        url:"http:\/\/www.kali.org\/docs\/cloud\/aws\/"
+      },
+      
+      {
+        value: "Building NetHunter",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/building-nethunter\/"
+      },
+      
+      {
+        value: "Configuring the Kernel - General",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-kernel-2-config-1\/"
+      },
+      
+      {
+        value: "Configuring the Kernel - Network",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-kernel-3-config-2\/"
+      },
+      
+      {
+        value: "Configuring the Kernel - SDR",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-kernel-5-config-4\/"
+      },
+      
+      {
+        value: "Configuring the Kernel - USB",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-kernel-6-config-5\/"
+      },
+      
+      {
+        value: "Configuring the Kernel - Wifi",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-kernel-4-config-3\/"
+      },
+      
+      {
+        value: "Configuring Yubikeys for SSH Authentication",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/configuring-yubikeys-for-ssh-authentication\/"
+      },
+      
+      {
+        value: "Contribute to Kali",
+        url:"http:\/\/www.kali.org\/docs\/community\/contribute\/"
+      },
+      
+      {
+        value: "Enabling Root",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/enabling-root\/"
+      },
+      
+      {
+        value: "How And Where To Get Help",
+        url:"http:\/\/www.kali.org\/docs\/community\/getting-help\/"
+      },
+      
+      {
+        value: "Installing NetHunter",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/installing-nethunter\/"
+      },
+      
+      {
+        value: "Installing snapd on Kali Linux",
+        url:"http:\/\/www.kali.org\/docs\/tools\/snap\/"
+      },
+      
+      {
+        value: "Installing Tor Browser on Kali Linux",
+        url:"http:\/\/www.kali.org\/docs\/tools\/tor\/"
+      },
+      
+      {
+        value: "Kali In The Browser (noVNC)",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/novnc-kali-in-browser\/"
+      },
+      
+      {
+        value: "Kali Linux Community Forums",
+        url:"http:\/\/www.kali.org\/docs\/community\/kali-linux-community-forums\/"
+      },
+      
+      {
+        value: "Kali Linux EULA",
+        url:"http:\/\/www.kali.org\/docs\/policy\/eula\/"
+      },
+      
+      {
+        value: "Kali Linux Forensics Mode",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/kali-linux-forensics-mode\/"
+      },
+      
+      {
+        value: "Kali Linux IRC Channel",
+        url:"http:\/\/www.kali.org\/docs\/community\/kali-linux-irc-channel\/"
+      },
+      
+      {
+        value: "Kali Linux LXC\/LXD Images",
+        url:"http:\/\/www.kali.org\/docs\/containers\/kalilinux-lxc-images\/"
+      },
+      
+      {
+        value: "Kali Linux Open Source Policy",
+        url:"http:\/\/www.kali.org\/docs\/policy\/kali-linux-open-source-policy\/"
+      },
+      
+      {
+        value: "Kali Linux Trademark Policy",
+        url:"http:\/\/www.kali.org\/docs\/policy\/trademark\/"
+      },
+      
+      {
+        value: "Kali Linux Update Policies",
+        url:"http:\/\/www.kali.org\/docs\/policy\/kali-linux-security-update-policies\/"
+      },
+      
+      {
+        value: "Kali Linux User Policy",
+        url:"http:\/\/www.kali.org\/docs\/policy\/kali-linux-user-policy\/"
+      },
+      
+      {
+        value: "Kali Training",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/kali-training\/"
+      },
+      
+      {
+        value: "Kali\u0027s Relationship With Debian",
+        url:"http:\/\/www.kali.org\/docs\/policy\/kali-linux-relationship-with-debian\/"
+      },
+      
+      {
+        value: "NetHunter Application - Terminal",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-terminal\/"
+      },
+      
+      {
+        value: "NetHunter BadUSB Attack",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-badusb\/"
+      },
+      
+      {
+        value: "NetHunter Chroot Manager",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-chroot-manager\/"
+      },
+      
+      {
+        value: "NetHunter Components",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-components\/"
+      },
+      
+      {
+        value: "NetHunter Custom Commands",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-custom-commands\/"
+      },
+      
+      {
+        value: "NetHunter Exploit Database SearchSploit",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-searchsploit\/"
+      },
+      
+      {
+        value: "NetHunter HID Keyboard Attacks",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-hid-attacks\/"
+      },
+      
+      {
+        value: "NetHunter Home Screen",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-home-screen\/"
+      },
+      
+      {
+        value: "NetHunter Kali Services",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-kali-services\/"
+      },
+      
+      {
+        value: "NetHunter MAC Changer",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-mac-changer\/"
+      },
+      
+      {
+        value: "NetHunter Man In The Middle Framework",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-mitmf\/"
+      },
+      
+      {
+        value: "NetHunter MANA Evil Access Point",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-mana-wireless\/"
+      },
+      
+      {
+        value: "NetHunter Metasploit Payload Generator",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-mpg\/"
+      },
+      
+      {
+        value: "NetHunter Nmap Scan",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-nmap\/"
+      },
+      
+      {
+        value: "NetHunter USB-Arsenal",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-usbarsenal\/"
+      },
+      
+      {
+        value: "Official Kali Linux Mirrors",
+        url:"http:\/\/www.kali.org\/docs\/community\/kali-linux-mirrors\/"
+      },
+      
+      {
+        value: "Packages That Behave Differently With Non-root",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/nonroot-behavioral-differences-in-packages\/"
+      },
+      
+      {
+        value: "Patching the Kernel",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/nethunter-kernel-1-patching\/"
+      },
+      
+      {
+        value: "Penetration Testing Tools Policy",
+        url:"http:\/\/www.kali.org\/docs\/policy\/penetration-testing-tools-policy\/"
+      },
+      
+      {
+        value: "Porting NetHunter to New Devices",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/porting-nethunter\/"
+      },
+      
+      {
+        value: "Setting up RDP with Xfce",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/xfce-with-rdp\/"
+      },
+      
+      {
+        value: "Submitting Bugs for Kali Linux",
+        url:"http:\/\/www.kali.org\/docs\/community\/submitting-issues-kali-bug-tracker\/"
+      },
+      
+      {
+        value: "Submitting tools to Kali",
+        url:"http:\/\/www.kali.org\/docs\/tools\/submitting-tools\/"
+      },
+      
+      {
+        value: "Switching Desktop Environments",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/switching-desktop-environments\/"
+      },
+      
+      {
+        value: "Testing Checklist",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/testing-checklist\/"
+      },
+      
+      {
+        value: "The Basics of Troubleshooting",
+        url:"http:\/\/www.kali.org\/docs\/troubleshooting\/basic-troubleshooting\/"
+      },
+      
+      {
+        value: "Troubleshooting Installations Failures",
+        url:"http:\/\/www.kali.org\/docs\/troubleshooting\/troubleshooting-a-kali-linux-install\/"
+      },
+      
+      {
+        value: "Troubleshooting Wireless Drivers",
+        url:"http:\/\/www.kali.org\/docs\/troubleshooting\/troubleshooting-wireless-driver-issues\/"
+      },
+      
+      {
+        value: "Updating Kali",
+        url:"http:\/\/www.kali.org\/docs\/general-use\/updating-kali\/"
+      },
+      
+      {
+        value: "Win-KeX SL",
+        url:"http:\/\/www.kali.org\/docs\/wsl\/win-kex-sl\/"
+      },
+      
+      {
+        value: "Win-KeX Win",
+        url:"http:\/\/www.kali.org\/docs\/wsl\/win-kex-win\/"
+      },
+      
+      {
+        value: "Wireless Cards and NetHunter",
+        url:"http:\/\/www.kali.org\/docs\/nethunter\/wireless-cards\/"
+      },
+      
+      {
+        value: "Kali Linux 2021.2 Release (Kaboxer, Kali-Tweaks, Bleeding-Edge \u0026 Privileged Ports)",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2021-2-release\/"
+      },
+      
+      {
+        value: "Kaboxer - Kali Applications Boxer",
+        url:"http:\/\/www.kali.org\/blog\/introducing-kaboxer\/"
+      },
+      
+      {
+        value: "Ampere Hardware \u0026 Kali Linux",
+        url:"http:\/\/www.kali.org\/blog\/ampere\/"
+      },
+      
+      {
+        value: "Privacy Policy",
+        url:"http:\/\/www.kali.org\/docs\/policy\/privacy\/"
+      },
+      
+      {
+        value: "Kali Linux 2021.1 Release (Command-Not-Found)",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2021-1-release\/"
+      },
+      
+      {
+        value: "BC Security\u0027s Empire\/Starkiller \u0026 Kali Linux",
+        url:"http:\/\/www.kali.org\/blog\/empire-starkiller\/"
+      },
+      
+      {
+        value: "Kali Linux \u002b Mr. Robot ARG Society",
+        url:"http:\/\/www.kali.org\/blog\/mr-robot-arg-society\/"
+      },
+      
+      {
+        value: "The last 12 Months (2019\/2020) \u0026 Looking Forwards (2021)",
+        url:"http:\/\/www.kali.org\/blog\/2019-2020-review-onwards-with-2021\/"
+      },
+      
+      {
+        value: "Announcing Kali Linux Newsletter \u002b Keeping in Touch",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-newsletter-keeping-in-touch\/"
+      },
+      
+      {
+        value: "Kali Linux 2020.4 Release (ZSH, Bash, CME, MOTD, AWS, Docs, Win-KeX \u0026 Vagrant)",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2020-4-release\/"
+      },
+      
+      {
+        value: "Win-KeX Version 2.0",
+        url:"http:\/\/www.kali.org\/blog\/win-kex-version-2-0\/"
+      },
+      
+      {
+        value: "Kali Linux 2020.3 Release (ZSH, Win-Kex, HiDPI \u0026 Bluetooth Arsenal)",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2020-3-release\/"
+      },
+      
+      {
+        value: "Creating Kali i3-gaps",
+        url:"http:\/\/www.kali.org\/blog\/_offsec-blog\/2020-07-06-creating-kali-i3_gaps\/"
+      },
+      
+      {
+        value: "Kali Linux 2020.2 Release (KDE \u0026 PowerShell)",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2020-2-release\/"
+      },
+      
+      {
+        value: "Kali NetHunter Updates",
+        url:"http:\/\/www.kali.org\/blog\/kali-nethunter-updates\/"
+      },
+      
+      {
+        value: "Kali Linux 2020.1a Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2020-1a-release\/"
+      },
+      
+      {
+        value: "Kali Everywhere!",
+        url:"http:\/\/www.kali.org\/blog\/kali-everywhere\/"
+      },
+      
+      {
+        value: "Kali Linux 2020.1 Release (Non-Root, Single Installer \u0026 NetHunter Rootless)",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2020-1-release\/"
+      },
+      
+      {
+        value: "Kali Default Non-Root User",
+        url:"http:\/\/www.kali.org\/blog\/kali-default-non-root-user\/"
+      },
+      
+      {
+        value: "How Kali deals with the upcoming Python 2 End-of-Life",
+        url:"http:\/\/www.kali.org\/blog\/python-2-end-of-life\/"
+      },
+      
+      {
+        value: "Kali Linux 2019.4 Release (Xfce, Gnome, GTK3, Kali-Undercover, Kali-Docs, KeX, PowerShell \u0026 Public Packaging)",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2019-4-release\/"
+      },
+      
+      {
+        value: "Kali Linux 2019.3 Release (CloudFlare, Kali-status, metapackages, Helper-Scripts \u0026 LXD)",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2019-3-release\/"
+      },
+      
+      {
+        value: "Major Metapackage Makeover",
+        url:"http:\/\/www.kali.org\/blog\/major-metapackage-makeover\/"
+      },
+      
+      {
+        value: "Kali NetHunter App Store - Public Beta",
+        url:"http:\/\/www.kali.org\/blog\/kali-nethunter-app-store\/"
+      },
+      
+      {
+        value: "Raspberry Pi 4 and Kali",
+        url:"http:\/\/www.kali.org\/blog\/raspberry-pi-4-and-kali\/"
+      },
+      
+      {
+        value: "Kali Linux in the DigitalOcean Cloud",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-in-the-digitalocean-cloud\/"
+      },
+      
+      {
+        value: "Kali Linux Roadmap (2019\/2020)",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-roadmap-2019-2020\/"
+      },
+      
+      {
+        value: "WSL2 and Kali",
+        url:"http:\/\/www.kali.org\/blog\/wsl2-and-kali\/"
+      },
+      
+      {
+        value: "Cloudflare Repositories FTW",
+        url:"http:\/\/www.kali.org\/blog\/_external\/cloudflare\/"
+      },
+      
+      {
+        value: "Kali Linux 2019.2 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2019-2-release\/"
+      },
+      
+      {
+        value: "Kali Linux 2019.1 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2019-1-release\/"
+      },
+      
+      {
+        value: "Kali Linux for the Gemini PDA",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-for-the-gemini-pda\/"
+      },
+      
+      {
+        value: "Kali Linux 2018.4 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2018-4-release\/"
+      },
+      
+      {
+        value: "Announcing Kali for Vagrant",
+        url:"http:\/\/www.kali.org\/blog\/announcing-kali-for-vagrant\/"
+      },
+      
+      {
+        value: "Making your own Kali Linux Metapackages",
+        url:"http:\/\/www.kali.org\/blog\/making-your-own-kali-linux-metapackages\/"
+      },
+      
+      {
+        value: "WireGuard on Kali",
+        url:"http:\/\/www.kali.org\/blog\/wireguard-on-kali\/"
+      },
+      
+      {
+        value: "My Custom Kali Linux Distribution",
+        url:"http:\/\/www.kali.org\/blog\/my-custom-kali-linux-distribution\/"
+      },
+      
+      {
+        value: "Kali Linux 2018.3 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2018-3-release\/"
+      },
+      
+      {
+        value: "Build Kali with Live-Build on Debian Based Systems",
+        url:"http:\/\/www.kali.org\/blog\/build-kali-with-live-build-on-debian-based-systems\/"
+      },
+      
+      {
+        value: "Secure Kali Pi 2018",
+        url:"http:\/\/www.kali.org\/blog\/secure-kali-pi-2018\/"
+      },
+      
+      {
+        value: "Installing PowerShell on Kali Linux",
+        url:"http:\/\/www.kali.org\/blog\/installing-powershell-on-kali-linux\/"
+      },
+      
+      {
+        value: "Kali Linux 2018.2 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2018-2-release\/"
+      },
+      
+      {
+        value: "Finding Packages for Kali Linux",
+        url:"http:\/\/www.kali.org\/blog\/finding-packages-for-kali-linux\/"
+      },
+      
+      {
+        value: "Kali Linux in the Windows App Store",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-in-the-windows-app-store\/"
+      },
+      
+      {
+        value: "Kali Linux 2018.1 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2018-1-release\/"
+      },
+      
+      {
+        value: "Your Journey Starts Here",
+        url:"http:\/\/www.kali.org\/blog\/your-kali-training-journey-starts-here\/"
+      },
+      
+      {
+        value: "Kali on the Windows Subsystem for Linux",
+        url:"http:\/\/www.kali.org\/blog\/kali-on-the-windows-subsystem-for-linux\/"
+      },
+      
+      {
+        value: "Kali Linux 2017.3 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2017-3-release\/"
+      },
+      
+      {
+        value: "Configuring and Tuning OpenVAS in Kali Linux",
+        url:"http:\/\/www.kali.org\/blog\/configuring-and-tuning-openvas-in-kali-linux\/"
+      },
+      
+      {
+        value: "Kali on KRACK",
+        url:"http:\/\/www.kali.org\/blog\/kali-on-krack\/"
+      },
+      
+      {
+        value: "Advanced Package Management in Kali Linux",
+        url:"http:\/\/www.kali.org\/blog\/advanced-package-management-in-kali-linux\/"
+      },
+      
+      {
+        value: "Kali Linux 2017.2 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2017-2-release\/"
+      },
+      
+      {
+        value: "VMware Fusion Kali USB Boot",
+        url:"http:\/\/www.kali.org\/blog\/vmware-fusion-kali-usb-boot\/"
+      },
+      
+      {
+        value: "Kali Drones, Portable CTF Builds, Raspberry Pi Craziness and More!",
+        url:"http:\/\/www.kali.org\/blog\/kali-drones-portable-ctf-builds-raspberry-pi-craziness-and-more\/"
+      },
+      
+      {
+        value: "Kali Linux 2017.1 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2017-1-release\/"
+      },
+      
+      {
+        value: "Kali Linux Repository HTTPS Support",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-repository-https-support\/"
+      },
+      
+      {
+        value: "Cracking in the Cloud with CUDA GPUs",
+        url:"http:\/\/www.kali.org\/blog\/cloud-cracking-with-cuda-gpu\/"
+      },
+      
+      {
+        value: "The Kali Linux Certified Professional",
+        url:"http:\/\/www.kali.org\/blog\/introducing-kali-linux-certified-professional\/"
+      },
+      
+      {
+        value: "Kali Linux in the AWS cloud, again",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-aws-cloud\/"
+      },
+      
+      {
+        value: "Azure Marketplace, Weekly ISO Builds",
+        url:"http:\/\/www.kali.org\/blog\/azure-marketplace-weekly-iso-builds\/"
+      },
+      
+      {
+        value: "Kali Linux 2016.2 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2016-2-release\/"
+      },
+      
+      {
+        value: "Hacking with Kali at Black Hat USA 2016",
+        url:"http:\/\/www.kali.org\/blog\/hacking-kali-black-hat\/"
+      },
+      
+      {
+        value: "Kali Linux Dojo at Black Hat Vegas 2016",
+        url:"http:\/\/www.kali.org\/blog\/kali-dojo-black-hat-vegas-2016\/"
+      },
+      
+      {
+        value: "Kali Linux 2016.1 Release - Rolling Edition",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2016-1-release\/"
+      },
+      
+      {
+        value: "Kali Moto End of Life \u0026 Kali Dojo Slides",
+        url:"http:\/\/www.kali.org\/blog\/kali-moto-eol\/"
+      },
+      
+      {
+        value: "Kali Linux 2.0 Release - Sana",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2-0-release\/"
+      },
+      
+      {
+        value: "Kali Linux 2.0 Release Day Scheduled",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-2-release-day-scheduled\/"
+      },
+      
+      {
+        value: "Official Kali Linux Docker Images Released",
+        url:"http:\/\/www.kali.org\/blog\/official-kali-linux-docker-images\/"
+      },
+      
+      {
+        value: "Pixiewps, Reaver \u0026 Aircrack-ng Wireless Penetration Testing Tool Updates",
+        url:"http:\/\/www.kali.org\/blog\/pixiewps-reaver-aircrack-ng-updates\/"
+      },
+      
+      {
+        value: "OpenVAS 8.0 Vulnerability Scanning",
+        url:"http:\/\/www.kali.org\/blog\/openvas-vulnerability-scanning\/"
+      },
+      
+      {
+        value: "Kali Linux 1.1.0 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-1-1-0-release\/"
+      },
+      
+      {
+        value: "Kali \u0026 NetHunter Security Release Fixes",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-1-0-9a-release\/"
+      },
+      
+      {
+        value: "Kali Tools Website Launched, 1.0.9 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-1-0-9-release\/"
+      },
+      
+      {
+        value: "Kali Linux 1.0.8 Release with EFI Boot Support",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-1-0-8-release\/"
+      },
+      
+      {
+        value: "Kali Linux 1.0.7 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-1-0-7-release\/"
+      },
+      
+      {
+        value: "Kali Linux Metapackages",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-metapackages\/"
+      },
+      
+      {
+        value: "Kali Linux Amazon EC2 AMI",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-amazon-ec2-ami\/"
+      },
+      
+      {
+        value: "Passing the Hash with Remote Desktop",
+        url:"http:\/\/www.kali.org\/blog\/passing-hash-remote-desktop\/"
+      },
+      
+      {
+        value: "How to Nuke your Encrypted Kali Installation",
+        url:"http:\/\/www.kali.org\/blog\/nuke-kali-linux-luks\/"
+      },
+      
+      {
+        value: "Kali Linux 1.0.6 Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-1-0-6-release\/"
+      },
+      
+      {
+        value: "Emergency Self Destruction of LUKS in Kali",
+        url:"http:\/\/www.kali.org\/blog\/emergency-self-destruction-luks-kali\/"
+      },
+      
+      {
+        value: "Ultimate Pentesting PwnBox (2013) - Utilite Pro",
+        url:"http:\/\/www.kali.org\/blog\/ultimate-pentesting-pwnbox-2013-utilite\/"
+      },
+      
+      {
+        value: "Kali Linux 1.0.5 and Software Defined Radio",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-1-0-5-release\/"
+      },
+      
+      {
+        value: "Kali Linux on Android using Linux Deploy",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-android-linux-deploy\/"
+      },
+      
+      {
+        value: "Tracking and Fixing an Installer Bug",
+        url:"http:\/\/www.kali.org\/blog\/tracking-fixing-installer-bugs\/"
+      },
+      
+      {
+        value: "Kali Linux - Penetration Testing Platform",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-penetration-testing-platform\/"
+      },
+      
+      {
+        value: "Kali Linux 1.0.4 Summer Update Release",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-1-0-4-release\/"
+      },
+      
+      {
+        value: "Pass the Hash toolkit, Winexe and more.",
+        url:"http:\/\/www.kali.org\/blog\/pass-the-hash-toolkit-winexe-updates\/"
+      },
+      
+      {
+        value: "Kali Linux Accessibility Improvements",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-1-0-3-release\/"
+      },
+      
+      {
+        value: "Bleeding Edge Kali Linux",
+        url:"http:\/\/www.kali.org\/blog\/bleeding-edge-kali-repositories\/"
+      },
+      
+      {
+        value: "Kali Linux Release Aftermath",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-1-0-1-release\/"
+      },
+      
+      {
+        value: "Kali Linux 1.0 Release - Moto - The Birth of Kali Linux",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-1-0-0-release\/"
+      },
+      
+      {
+        value: "Whats New in Kali Linux?",
+        url:"http:\/\/www.kali.org\/blog\/kali-linux-whats-new\/"
+      },
+      
+      {
+        value: "",
+        url:"http:\/\/www.kali.org\/blog\/_drafts\/kali-linux-2022.1-release\/"
+      },
+      
+      {
+        value: "",
+        url:"http:\/\/www.kali.org\/blog\/_offsec-blog\/2020-03-27-kali-customisation\/"
+      },
+      
+      {
+        value: "",
+        url:"http:\/\/www.kali.org\/blog\/_offsec-blog\/2020-05-01-searchsploit-update\/"
+      },
+      
+      {
+        value: "",
+        url:"http:\/\/www.kali.org\/blog\/_template\/kali-release\/"
+      },
+      
+      {
+        value: "",
+        url:"http:\/\/www.kali.org\/browser-home-page\/"
+      },
+      
+      {
+        value: "Community and Support",
+        url:"http:\/\/www.kali.org\/community\/"
+      },
+      
+      {
+        value: "Contact Us",
+        url:"http:\/\/www.kali.org\/contact\/"
+      },
+      
+      {
+        value: "Features",
+        url:"http:\/\/www.kali.org\/features\/"
+      },
+      
+      {
+        value: "Get Kali",
+        url:"http:\/\/www.kali.org\/get-kali\/"
+      },
+      
+      {
+        value: "Get Kali",
+        url:"http:\/\/www.kali.org\/kali-nethunter\/"
+      },
+      
+      {
+        value: "How GitLab helped Kali Linux attract a growing number of community contributions",
+        url:"http:\/\/www.kali.org\/blog\/_external\/gitlab\/"
+      },
+      
+      {
+        value: "Kali Newsletter",
+        url:"http:\/\/www.kali.org\/newsletter\/"
+      },
+      
+      {
+        value: "Meet The Kali Team",
+        url:"http:\/\/www.kali.org\/about-us\/"
+      },
+      
+      {
+        value: "Partnerships \u0026 Sponsorships",
+        url:"http:\/\/www.kali.org\/partnerships-sponsorships\/"
+      },
+      
+      {
+        value: "Releases History",
+        url:"http:\/\/www.kali.org\/releases\/"
+      },
+      
+    ]
+
+     const searchInput = $('#searchbar input')
+
+    
+    searchInput.oninput = () => {
+      const resultContainer = $('#search-result')
+      resultContainer.innerHTML = ''
+      searchInput.classList.remove('expanded')
+      if (!searchInput.value.trim())
+        return
+
+      const keywords = searchInput.value.toUpperCase().split(' ')
+      const searchResult = PAGES.filter(item =>
+        keywords.reduce((isCorrect, word) =>
+          isCorrect && item.value.toUpperCase().indexOf(word) !== -1, true))
+      searchInput.classList.add('expanded')
+      searchResult.push({
+        value: "Didn't find an answer to your question? Use the forums",
+        url: 'https://forums.kali.org/'
+      })
+      searchResult.forEach(item => {
+          resultContainer.appendChild(Object.assign(document.createElement('LI'), {
+            innerHTML: "<a href=" + item.url + `>${item.value}</a>` // Use "+" to avoid `wget -p` modifying href (for browser-home-page)
+          }))
+        })
+    }
+
+    $('#search-result').onmousemove = ({ target }) => searchInput.value = target.innerText
+
+    
+    document.body.addEventListener('click', () => {
+      const input = $('#searchbar input')
+      input.classList.remove('expanded')
+      input.value = ''
+      $('#search-result').innerHTML = ''
+    })
+    $('#search-result').onclick = e => e.stopPropagation()
+  }
+</script>
+
+
+<div id="link-buttons">
+  <a href="http://www.kali.org/docs/"><i class="ti-book"></i> Documentation</a>
+  <a href="http://www.kali.org/tools/"><i class="ti-settings"></i> Kali Tools</a>
+  <div>
+    <a href="http://www.kali.org/blog/latest-release/">Check out what's new in the latest release of Kali Linux!</a>
+  </div>
+</div>
+
+
+    </header>
+    
+
+
+
+<style>
+  .darkmode-switch { display: none; }
+
+  header {
+    height: 100vh;
+    min-height: 650px;
+    display: flex;
+  }
+
+  header.bg-cover::before { display: none; }
+
+  #banner {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+  }
+
+  #banner > h1, #banner > p { display: none; }
+
+  #searchbar { margin-bottom: 0; }
+
+  #searchbar::before {
+    top: -230px;
+    content: '';
+    position: absolute;
+    background: url('images/kali-dragon-icon.svg') no-repeat;
+    background-size: 81% auto;
+    width: 100%;
+    height: 332px;
+    background-position: left center;
+  }
+
+  #searchbar input, #link-buttons { position: relative; }
+
+  #searchbar > *, #link-buttons { z-index: 1; }
+
+  #search-result { z-index: 2; }
+
+  #searchbar input { box-shadow: 0 5px 20px rgba(0, 0, 0, .5); }
+
+  #link-buttons {
+    text-align: center;
+    flex: 1;
+  }
+
+  #link-buttons > a {
+    display: inline-block;
+    font-size: 14px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    width: 180px;
+    padding: 0.75em 1em;
+    margin: 0 5px;
+    opacity: 0.9;
+    background: white;
+    color: #444;
+    transition: opacity .2s;
+  }
+
+  #link-buttons > a:hover { opacity: 1; }
+
+  #link-buttons > a i {
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  #link-buttons > div > a {
+    margin: 80px;
+    display: inline-block;
+    color: white;
+    text-shadow: 0 1px 5px black;
+  }
+
+  footer { margin-top: 0; }
+
+</style>
+
+
+    <!-- footer -->
+<footer>
+  <div class="darkmode-switch">
+    <span>LIGHT</span><label class="switch">
+      <input type="checkbox" name="toggle-darkmode">
+      <div></div>
+    </label><span>DARK</span>
+  </div>
+  <div class="container">
+    <div>
+      <h4>Downloads</h4>
+      <a href="http://www.kali.org/get-kali/" rel="noopener" target="_blank">Kali Linux</a>
+      <a href="http://www.kali.org/get-kali/#kali-mobile" rel="noopener" target="_blank">Kali NetHunter</a>
+      <h4>Links</h4>
+      <a href="http://www.kali.org/" rel="noopener" target="_blank">Home</a>
+      <a href="http://www.kali.org/blog/" rel="noopener" target="_blank">Blog</a>
+      <a href="http://www.kali.org/docs/" rel="noopener" target="_blank">Documentation</a>
+      <a href="http://www.kali.org/tools" rel="noopener" target="_blank">Tools</a>
+      <a href="https://forums.kali.org/" rel="noopener" target="_blank">Support Forum</a>
+      <a href="https://bugs.kali.org/" rel="noopener" target="_blank">Bug Tracker</a>
+      <a href="https://status.kali.org/" rel="noopener" target="_blank">System Status</a>
+    </div>
+    <div>
+      <h4>Policies</h4>
+      <a href="http://www.kali.org/docs/policy/cookie/">Cookie Policy</a>
+      <a href="http://www.kali.org/docs/policy/privacy/">Privacy Policy</a>
+      <a href="http://www.kali.org/docs/policy/trademark/">Trademark Policy</a>
+      <h4>Follow Us</h4>
+      <a href="https://twitter.com/kalilinux" title="Twitter" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/>
+        </svg>
+        Twitter
+      </a>
+      <a href="https://www.facebook.com/kalilinux" title="Facebook" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z"/>
+        </svg>
+        Facebook
+      </a>
+      <a href="https://gitlab.com/kalilinux" title="GitLab" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M23.955 13.587l-1.342-4.135-2.664-8.189c-.135-.423-.73-.423-.867 0L16.418 9.45H7.582L4.919 1.263C4.783.84 4.185.84 4.05 1.26L1.386 9.449.044 13.587c-.121.375.014.789.331 1.023L12 23.054l11.625-8.443c.318-.235.453-.647.33-1.024"/>
+        </svg>
+        GitLab
+      </a>
+      <a href="https://github.com/kalilinux" title="GitHub" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+        GitHub
+      </a>
+      <a href="https://www.microsoft.com/en-us/p/kali-linux/9pkr34tncv07" title="Microsoft Store" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zm12.6 0H12.6V0H24v11.4z"/>
+        </svg>
+        Microsoft Store
+      </a>
+      <a href="https://hub.docker.com/u/kalilinux" title="Docker" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M4.82 17.275c-.684 0-1.304-.56-1.304-1.24s.56-1.243 1.305-1.243c.748 0 1.31.56 1.31 1.242s-.622 1.24-1.305 1.24zm16.012-6.763c-.135-.992-.75-1.8-1.56-2.42l-.315-.25-.254.31c-.494.56-.69 1.553-.63 2.295.06.562.24 1.12.554 1.554-.254.13-.568.25-.81.377-.57.187-1.124.25-1.68.25H.097l-.06.37c-.12 1.182.06 2.42.562 3.54l.244.435v.06c1.5 2.483 4.17 3.6 7.078 3.6 5.594 0 10.182-2.42 12.357-7.633 1.425.062 2.864-.31 3.54-1.676l.18-.31-.3-.187c-.81-.494-1.92-.56-2.85-.31l-.018.002zm-8.008-.992h-2.428v2.42h2.43V9.518l-.002.003zm0-3.043h-2.428v2.42h2.43V6.48l-.002-.003zm0-3.104h-2.428v2.42h2.43v-2.42h-.002zm2.97 6.147H13.38v2.42h2.42V9.518l-.007.003zm-8.998 0H4.383v2.42h2.422V9.518l-.01.003zm3.03 0h-2.4v2.42H9.84V9.518l-.015.003zm-6.03 0H1.4v2.42h2.428V9.518l-.03.003zm6.03-3.043h-2.4v2.42H9.84V6.48l-.015-.003zm-3.045 0H4.387v2.42H6.8V6.48l-.016-.003z"/>
+        </svg>
+        Docker
+      </a>
+      <a href="https://app.vagrantup.com/kalilinux" title="Vagrant" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M5.672 6.774V4.917l3.164-1.822L3.56.005.397 1.852v2.263L7.52 21.41 12 23.995v-6.496l2.107-1.224-.024-.015 4.245-9.486V4.917l5.275-3.065L20.439.005l-5.272 3.087h-.003V5.202L12 12.584v2.467l-2.11 1.224zm3.164-3.66L8.814 3.1 5.672 4.917v1.857l4.218 9.501L12 15.234v-2.65L8.836 5.202zm9.492 1.803v1.857l-4.22 9.101L12 17.332v6.663l4.521-2.607L23.603 4.05V1.852z"/>
+        </svg>
+        Vagrant
+      </a>
+      <a href="https://aws.amazon.com/marketplace/pp/B08LL91KKB" title="Amazon AWS" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687c-.151 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167zM21.698 16.207c-2.626 1.94-6.442 2.969-9.722 2.969-4.598 0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914 0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zM22.792 14.961c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.57.695-2.994z"/>
+        </svg>
+        Amazon AWS
+      </a>
+      <a href="https://azuremarketplace.microsoft.com/en/marketplace/apps/kali-linux.kali-linux" title="Microsoft Azure" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M5.483 21.3H24L14.025 4.013l-3.038 8.347 5.836 6.938L5.483 21.3zM13.23 2.7L6.105 8.677 0 19.253h5.505v.014L13.23 2.7z"/>
+        </svg>
+        Microsoft Azure
+      </a>
+      <a href="http://www.kali.org/rss.xml" title="RSS" rel="noopener" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/>
+        </svg>
+        RSS
+      </a>
+    </div>
+    <div>
+      <svg id="footer-logo" viewBox="0 0 135.47 135.47">
+        <path fill="currentColor" d="m71.766 36.352s-10.212-0.6795-27.602 4.7619c-17.722 5.5452-27.773 13.405-27.773 13.405s26.414-14.748 56.228-15.586zm38.09 16.035 1.3276-0.08664s-7.6062-9.2286-22.165-13.724c8.1839 3.3267 15.307 7.7345 20.837 13.81zm2.1727 3.8344c0.20411-0.3539 0.86302 1.1243 1.3634 1.7453 0.0212 0.124 0.0564 0.19967-0.23373 0.13998-0.0244-0.12747-0.0665-0.16444-0.0665-0.16444s-0.70029-0.41667-0.91499-0.71224c-0.21487-0.29556-0.253-0.81255-0.14825-1.0086zm17.867 43.93s1.6147-18.538-27.511-22.812c-3.6915-0.54163-8.3599-0.9585-13.082-0.97044-23.344 0.30865-24.195-26.924-6.6044-28.299 7.2901-0.60152 15.995 3.3311 24.505 7.2941-0.0316 1.0569 0.0121 1.9961 0.70646 2.864 0.69414 0.86762 3.3607 1.8142 4.2128 2.3031 0.85203 0.48907 3.5816 2.2245 5.2543 4.4017 0.36275-0.67854 3.3921-2.6504 3.3921-2.6504s-0.72571 0.01579-2.414-0.61519c-1.6885-0.63098-3.6921-2.5401-3.7395-2.6504-0.0473-0.11052-0.0788-0.28401 0.31578-0.36295 0.2996-0.25224-0.37893-1.0727-0.67874-1.3723-0.2996-0.2998-2.3036-3.7073-2.3508-3.7863-0.0473-0.07894-0.0632-0.1577-0.20507-0.25243-0.4419-0.1421-2.3826 0.20506-2.3826 0.20506s-2.9847-1.4659-4.0135-4.6264c0.015 0.55358-0.5118 1.158 0 2.4298-1.5562-0.65832-2.8929-1.7811-3.9472-4.5557-0.62751 1.5781 0 2.5815 0 2.5815s-3.6646-1.024-4.2509-4.4036c-0.6435 1.5171 0 2.4296 0 2.4296s-5.9742-3.1172-15.901-3.1624c-6.646-0.60961-8.0296-12.301-7.4139-14.269 0 0-9.586-5.0521-28.456-7.2841-18.87-2.2322-34.346-0.33638-34.346-0.33638s33.421-1.6039 60.195 9.2356c0.91018 4.0709 3.6482 10.851 5.1229 14.11-4.2197 2.9175-8.9781 5.6609-9.7191 15.391-0.74074 9.7297 7.6245 18.288 17.998 18.552 9.8502 0.52469 16.656 0.59921 24.905 4.8759 7.8739 4.3537 14.33 17.62 14.969 29.551 0.69008-8.8524-2.632-27.889-18.134-33.669 21.667 3.7917 23.573 19.854 23.573 19.854zm-58.64-65.253-0.77963-2.5147s-12.864-2.2844-30.16-1.055c-17.296 1.2294-34.759 7.2839-34.759 7.2839s35.732-8.991 65.698-3.7143"/>
+      </svg>
+      © OffSec Services Limited 2022. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- /footer -->
+
+    
+    <script src="script.min.js"></script>
+  </body>
+</html>
